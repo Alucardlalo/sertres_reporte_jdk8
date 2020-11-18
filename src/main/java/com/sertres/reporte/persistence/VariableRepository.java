@@ -9,7 +9,7 @@ public class VariableRepository {
     private VariableCrudRepository variableCrudRepository;
 
     //metodo para consultar todos los datos de variable
-    public List<Variable> GetAll(){
+    public List<Variable> GetAllVariable(){
         return (List<Variable>) variableCrudRepository.findAll();
     }
 }

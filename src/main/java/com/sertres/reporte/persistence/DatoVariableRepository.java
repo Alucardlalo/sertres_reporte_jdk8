@@ -9,7 +9,7 @@ public class DatoVariableRepository {
     private DatoVariableCrudRepository datoVariableCrudRepository;
 
     //metodo para recuperar todos los datos variable
-    public List<DatoVariable> GetAll(){
+    public List<DatoVariable> GetAllDatoVariable(){
         return (List<DatoVariable>) datoVariableCrudRepository.findAll();
     }
 }

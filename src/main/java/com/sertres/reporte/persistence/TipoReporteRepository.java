@@ -9,7 +9,7 @@ public class TipoReporteRepository {
     private TipoReporteCrudRepository tipoReporteCrudRepository;
 
     //metodo que recupera todos los tipos de reporte
-    public List<TipoReporte> GetAll(){
+    public List<TipoReporte> GetAllTipoReporte(){
         return (List<TipoReporte>) tipoReporteCrudRepository.findAll();
     }
 }

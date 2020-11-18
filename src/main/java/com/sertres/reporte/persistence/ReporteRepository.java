@@ -9,7 +9,7 @@ public class ReporteRepository {
     private ReporteCrudRepository reporteCrudRepository;
 
     //metodo para consultar todos los reportes
-    public List<Reporte> GetAll(){
+    public List<Reporte> GetAllReporte(){
         return (List<Reporte>) reporteCrudRepository.findAll();
     }
 }
