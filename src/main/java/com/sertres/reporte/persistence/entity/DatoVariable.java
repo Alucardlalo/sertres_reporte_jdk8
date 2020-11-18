@@ -1,6 +1,7 @@
 package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "dato_variable")
@@ -19,6 +20,12 @@ public class DatoVariable {
 
     private String dato;
 
+
+    @OneToMany(mappedBy = "datoVariable")
+    private List<Reporte> reportes;
+
+    @OneToMany(mappedBy = "datoVariable")
+    private List<Variable> variables;
 
     public Integer getIdDatoVariable() {
         return idDatoVariable;

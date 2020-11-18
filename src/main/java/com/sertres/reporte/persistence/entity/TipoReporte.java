@@ -1,6 +1,7 @@
 package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tipo_reporte")
@@ -16,6 +17,11 @@ public class TipoReporte {
 
     private String descripcion;
 
+    @OneToMany(mappedBy = "tipoReporte")
+    private List<Reporte> reportes;
+
+    @OneToMany(mappedBy = "tipoReporte")
+    private List<Variable> variables;
 
     public Integer getIdTipoReporte() {
         return idTipoReporte;

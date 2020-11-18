@@ -22,6 +22,13 @@ public class Variable {
 
     private Integer orden;
 
+    @ManyToOne//relacion reporte tipoReporte
+    @JoinColumn(name = "id_tipo_reporte",insertable = false, updatable = false)
+    private TipoReporte tipoReporte;
+
+    @ManyToOne
+    @JoinColumn(name = "id_variable",insertable = false, updatable = false)
+    private DatoVariable datoVariable;
 
     public Integer getIdVariable() {
         return idVariable;

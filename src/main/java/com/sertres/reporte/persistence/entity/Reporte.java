@@ -32,6 +32,14 @@ public class Reporte {
 
     private String estado;
 
+    @ManyToOne//relacion reporte tipoReporte
+    @JoinColumn(name = "id_tipo_reporte",insertable = false, updatable = false)
+    private TipoReporte tipoReporte;
+
+    @ManyToOne
+    @JoinColumn(name = "id_reporte", insertable = false, updatable = false)
+    private DatoVariable datoVariable;
+
 
     public Integer getIdReporte() {
         return idReporte;
