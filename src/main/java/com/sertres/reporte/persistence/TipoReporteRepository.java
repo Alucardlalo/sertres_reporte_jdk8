@@ -12,4 +12,9 @@ public class TipoReporteRepository {
     public List<TipoReporte> GetAllTipoReporte(){
         return (List<TipoReporte>) tipoReporteCrudRepository.findAll();
     }
+
+    //metodo de querry method para traer tipo de reporte por id especifico
+    public List<TipoReporte> GetByIdTipoReporte(int idTipoReporte){
+        return tipoReporteCrudRepository.findByIdTipoReporte(idTipoReporte);
+    }
 }
