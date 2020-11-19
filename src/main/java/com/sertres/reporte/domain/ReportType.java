@@ -15,11 +15,11 @@ public class ReportType {
     private String description;
 
 
-    public Integer getIdReportType() {
+    public Integer getReportTypeId() {
         return reportTypeId;
     }
 
-    public void setIdReportType(Integer reportTypeId) {
+    public void setReportTypeId(Integer reportTypeId) {
         this.reportTypeId = reportTypeId;
     }
 
