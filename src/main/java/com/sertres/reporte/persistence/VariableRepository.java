@@ -5,13 +5,18 @@ import com.sertres.reporte.domain.repository.VariableIRepository;
 import com.sertres.reporte.persistence.crud.VariableCrudRepository;
 import com.sertres.reporte.persistence.entity.Variable;
 import com.sertres.reporte.persistence.mapper.VariableMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
 public class VariableRepository implements VariableIRepository {
+
+    @Autowired
     private VariableCrudRepository variableCrudRepository;
+
+    @Autowired
     private VariableMapper mapper;
 
     @Override

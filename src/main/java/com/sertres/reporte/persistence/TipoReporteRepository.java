@@ -5,6 +5,7 @@ import com.sertres.reporte.domain.repository.ReportTypeRepository;
 import com.sertres.reporte.persistence.crud.TipoReporteCrudRepository;
 import com.sertres.reporte.persistence.entity.TipoReporte;
 import com.sertres.reporte.persistence.mapper.ReportTypeMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +13,11 @@ import java.util.Optional;
 
 @Repository
 public class TipoReporteRepository implements ReportTypeRepository {
+
+    @Autowired
     private TipoReporteCrudRepository tipoReporteCrudRepository;
+
+    @Autowired
     private ReportTypeMapper mapper;
 
     @Override
