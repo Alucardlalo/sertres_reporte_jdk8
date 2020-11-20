@@ -12,7 +12,7 @@ public class TipoReporteRepository {
     private TipoReporteCrudRepository tipoReporteCrudRepository;
 
     //metodo que recupera todos los tipos de reporte
-    public List<TipoReporte> GetAllTipoReporte(){
+    public List<TipoReporte> GetAll(){
         return (List<TipoReporte>) tipoReporteCrudRepository.findAll();
     }
 
@@ -27,12 +27,12 @@ public class TipoReporteRepository {
     }
 
     //salvar un nuevo tipo de reporte
-    public TipoReporte saveTipoReporte(TipoReporte tipoReporte){
+    public TipoReporte save(TipoReporte tipoReporte){
         return tipoReporteCrudRepository.save(tipoReporte);
     }
 
     //eliminar un tipo de reporte mediante clave primaria
-    public void eliminarTipoReporte(int idTipoReporte){
+    public void delete(int idTipoReporte){
         tipoReporteCrudRepository.deleteById(idTipoReporte);
     }
 }

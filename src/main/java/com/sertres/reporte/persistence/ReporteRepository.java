@@ -14,4 +14,23 @@ public class ReporteRepository {
     public List<Reporte> GetAllReporte(){
         return (List<Reporte>) reporteCrudRepository.findAll();
     }
+
+    //reporte por id
+    public List<Reporte> GetByIdReporte(int idReporte){
+        return reporteCrudRepository.findByIdReporte(idReporte);
+    }
+
+    //busqueda por nombre de reporte
+    public List<Reporte> GetByNameReporte(String tituloReporte){
+        return reporteCrudRepository.findByNameReporte(tituloReporte);
+    }
+
+    //save and delete
+    public Reporte save(Reporte reporte){
+        return reporteCrudRepository.save(reporte);
+    }
+
+    public void delete (int idReporte){
+        reporteCrudRepository.deleteById(idReporte);
+    }
 }
