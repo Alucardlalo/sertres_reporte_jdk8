@@ -2,9 +2,11 @@ package com.sertres.reporte.persistence;
 
 import com.sertres.reporte.persistence.crud.DatoVariableCrudRepository;
 import com.sertres.reporte.persistence.entity.DatoVariable;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class DatoVariableRepository {
     private DatoVariableCrudRepository datoVariableCrudRepository;
 

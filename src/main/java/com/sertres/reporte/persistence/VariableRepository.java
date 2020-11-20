@@ -2,9 +2,11 @@ package com.sertres.reporte.persistence;
 
 import com.sertres.reporte.persistence.crud.VariableCrudRepository;
 import com.sertres.reporte.persistence.entity.Variable;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class VariableRepository {
     private VariableCrudRepository variableCrudRepository;
 
