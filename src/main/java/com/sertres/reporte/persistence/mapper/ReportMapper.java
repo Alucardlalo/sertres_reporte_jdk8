@@ -18,7 +18,7 @@ public interface ReportMapper {
             @Mapping(source = "fechaInicio", target = "beginDate"),
             @Mapping(source = "fechaFin", target = "endDate"),
             @Mapping(source = "estado", target = "status"),
-            @Mapping(source = "idTipoReporte", target = "reportTypeId")
+            @Mapping(source = "tipoReporte", target = "reportType")
     })
     Report toReport(Reporte reporte);
 
