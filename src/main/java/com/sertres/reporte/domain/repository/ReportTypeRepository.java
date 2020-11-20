@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface ReportTypeRepository {
 
     List<ReportType> getAll();
+    List<ReportType> GetByReportTypeId (int reportTypeId);
     Optional<List<ReportType>> GetReportType(int reportTypeId);
     //save and delete
     ReportType save (ReportType reportType);

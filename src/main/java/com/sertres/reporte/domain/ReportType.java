@@ -1,25 +1,20 @@
 package com.sertres.reporte.domain;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 public class ReportType {
 
 
-    private Integer reportTypeId;
+    private int reportTypeId;
 
     private String reportType;
 
     private String description;
 
-
-    public Integer getReportTypeId() {
+    public int getReportTypeId() {
         return reportTypeId;
     }
 
-    public void setReportTypeId(Integer reportTypeId) {
+    public void setReportTypeId(int reportTypeId) {
         this.reportTypeId = reportTypeId;
     }
 

@@ -1,18 +1,14 @@
 package com.sertres.reporte.domain;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 public class Report {
 
-    private Integer reportId;
+    private int reportId;
 
-    private Integer reportTypeId;
+    private int reportTypeId;
 
-    private Integer deviceId;
+    private int deviceId;
 
     private String reportTittle;
 
@@ -24,27 +20,28 @@ public class Report {
 
     private String status;
 
-    public Integer getReportId() {
+
+    public int getReportId() {
         return reportId;
     }
 
-    public void setReportId(Integer reportId) {
+    public void setReportId(int reportId) {
         this.reportId = reportId;
     }
 
-    public Integer getReportTypeId() {
+    public int getReportTypeId() {
         return reportTypeId;
     }
 
-    public void setReportTypeId(Integer reportTypeId) {
+    public void setReportTypeId(int reportTypeId) {
         this.reportTypeId = reportTypeId;
     }
 
-    public Integer getDeviceId() {
+    public int getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(Integer deviceId) {
+    public void setDeviceId(int deviceId) {
         this.deviceId = deviceId;
     }
 
