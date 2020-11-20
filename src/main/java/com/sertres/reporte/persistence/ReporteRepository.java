@@ -1,36 +1,46 @@
 package com.sertres.reporte.persistence;
 
+import com.sertres.reporte.domain.Report;
+import com.sertres.reporte.domain.repository.ReportRepository;
 import com.sertres.reporte.persistence.crud.ReporteCrudRepository;
 import com.sertres.reporte.persistence.entity.Reporte;
+import com.sertres.reporte.persistence.mapper.ReportMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class ReporteRepository {
+public class ReporteRepository implements ReportRepository {
     private ReporteCrudRepository reporteCrudRepository;
+    private ReportMapper mapper;
 
-    //metodo para consultar todos los reportes
-    public List<Reporte> GetAllReporte(){
-        return (List<Reporte>) reporteCrudRepository.findAll();
+    @Override
+    public List<Report> getAll(){
+        List<Reporte> reportes = (List<Reporte>) reporteCrudRepository.findAll();
+        return mapper.toReports(reportes);
     }
 
-    //reporte por id
-    public List<Reporte> GetByIdReporte(int idReporte){
-        return reporteCrudRepository.findByIdReporte(idReporte);
+    @Override
+    public List<Report> GetByReport(int reportId) {
+        List<Reporte> reportes = reporteCrudRepository.findByIdReporte(reportId);
+        return mapper.toReports(reportes);
     }
 
-    //busqueda por nombre de reporte
-    public List<Reporte> GetByNameReporte(String tituloReporte){
-        return reporteCrudRepository.findByNameReporte(tituloReporte);
+    @Override
+    public List<Report> GetByNameReport(String reportTittle) {
+        List<Reporte> reportes = reporteCrudRepository.findByNameReporte(reportTittle);
+        return mapper.toReports(reportes);
     }
 
-    //save and delete
-    public Reporte save(Reporte reporte){
-        return reporteCrudRepository.save(reporte);
+    @Override
+    public Report save(Report report) {
+        Reporte reporte = mapper.toReport(report);
+        return mapper.toReport(reporteCrudRepository.save(reporte));
     }
 
-    public void delete (int idReporte){
-        reporteCrudRepository.deleteById(idReporte);
+    @Override
+    public void delete(int reportId) {
+        reporteCrudRepository.deleteById(reportId);
     }
+
 }

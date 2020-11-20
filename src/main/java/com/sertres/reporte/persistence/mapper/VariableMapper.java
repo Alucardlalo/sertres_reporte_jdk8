@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring", uses = {ReportTypeMapper.class , })
 public interface VariableMapper {
     @Mappings({
@@ -16,9 +18,11 @@ public interface VariableMapper {
             @Mapping(source = "etiquetaVariable", target = "variableLabel"),
             @Mapping(source = "orden", target = "order")
     })
-    Variable toVariableI(VariableI variableI);
+    VariableI toVariableI(Variable variable);
+
+    List<VariableI> toVariblesI(List<Variable> variables);
 
     //mapeio inverso
     @InheritInverseConfiguration
-    VariableI toVariable(Variable variable);
+    Variable toVariable(VariableI variableI);
 }

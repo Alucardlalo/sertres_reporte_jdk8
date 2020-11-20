@@ -1,38 +1,47 @@
 package com.sertres.reporte.persistence;
 
+import com.sertres.reporte.domain.ReportType;
+import com.sertres.reporte.domain.repository.ReportTypeRepository;
 import com.sertres.reporte.persistence.crud.TipoReporteCrudRepository;
 import com.sertres.reporte.persistence.entity.TipoReporte;
+import com.sertres.reporte.persistence.mapper.ReportTypeMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class TipoReporteRepository {
+public class TipoReporteRepository implements ReportTypeRepository {
     private TipoReporteCrudRepository tipoReporteCrudRepository;
+    private ReportTypeMapper mapper;
 
-    //metodo que recupera todos los tipos de reporte
-    public List<TipoReporte> GetAll(){
-        return (List<TipoReporte>) tipoReporteCrudRepository.findAll();
+    @Override
+    public List<ReportType> getAll() {
+        List<TipoReporte> tipoReportes = (List<TipoReporte>) tipoReporteCrudRepository.findAll();
+        return mapper.toReportTypes(tipoReportes);
     }
 
-    //querry method para traer tipo de reporte por id especifico
-    public List<TipoReporte> GetByIdTipoReporte(int idTipoReporte){
-        return tipoReporteCrudRepository.findByIdTipoReporte(idTipoReporte);
+    @Override
+    public List<ReportType> GetByReportTypeId(int reportTypeId) {
+        List<TipoReporte> tipoReportes = tipoReporteCrudRepository.findByIdTipoReporte(reportTypeId);
+        return mapper.toReportTypes(tipoReportes);
     }
 
-    //retorna un tipo reporte especifico
-    public Optional<TipoReporte> GetTipoReporte(int idTipoReporte){
-        return tipoReporteCrudRepository.findById(idTipoReporte);
+    @Override
+    public Optional<List<ReportType>> GetReportType(int reportTypeId) {
+        List<TipoReporte> tipoReportes = tipoReporteCrudRepository.findByIdTipoReporte(reportTypeId);
+        return Optional.of(mapper.toReportTypes(tipoReportes));//resive un optional
     }
 
-    //salvar un nuevo tipo de reporte
-    public TipoReporte save(TipoReporte tipoReporte){
-        return tipoReporteCrudRepository.save(tipoReporte);
+    @Override
+    public ReportType save(ReportType reportType) {
+        TipoReporte tipoReporte = mapper.toTipoReporte(reportType);
+        return mapper.toReportType(tipoReporteCrudRepository.save(tipoReporte));
     }
 
-    //eliminar un tipo de reporte mediante clave primaria
-    public void delete(int idTipoReporte){
-        tipoReporteCrudRepository.deleteById(idTipoReporte);
+    @Override
+    public void delete(int reportTypeId) {
+        tipoReporteCrudRepository.deleteById(reportTypeId);
     }
+
 }

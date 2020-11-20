@@ -4,7 +4,7 @@ import com.sertres.reporte.domain.VariableI;
 
 import java.util.List;
 
-public interface VariableRepository {
+public interface VariableIRepository {
 
     List<VariableI> GetAll();
     List<VariableI> GetByReportTypeId(int reportTypeId);

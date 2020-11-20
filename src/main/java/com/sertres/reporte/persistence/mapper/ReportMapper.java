@@ -7,6 +7,8 @@ import com.sertres.reporte.persistence.entity.Reporte;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring", uses = {ReportTypeMapper.class})
 public interface ReportMapper {
 
@@ -21,6 +23,8 @@ public interface ReportMapper {
             @Mapping(source = "tipoReporte", target = "reportType")
     })
     Report toReport(Reporte reporte);
+
+    List<Report> toReports(List<Reporte> reportes);
 
     //conversion inversa
     @InheritInverseConfiguration
