@@ -9,11 +9,11 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class , })
+@Mapper(componentModel = "spring")//, uses = {ReportTypeMapper.class , })
 public interface VariableMapper {
     @Mappings({
             @Mapping(source = "idVariable", target = "variableId"),
-            @Mapping(source = "tipoReporte", target = "reportType"),
+            @Mapping(source = "idTipoReporte", target = "reportTypeId"),
             @Mapping(source = "nombreVariable", target = "variableName"),
             @Mapping(source = "etiquetaVariable", target = "variableLabel"),
             @Mapping(source = "orden", target = "order")

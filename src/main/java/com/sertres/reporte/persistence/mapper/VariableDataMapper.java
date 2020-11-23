@@ -7,13 +7,13 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring", uses = {ReportMapper.class , VariableMapper.class})
+@Mapper(componentModel = "spring")
 public interface VariableDataMapper {
 
     @Mappings({
             @Mapping(source = "idDatoVariable", target = "variableDataId"),
-            @Mapping(source = "datoVariable", target = "variableData"),
-            @Mapping(source = "datoVariable1", target = "variableData1"),
+            @Mapping(source = "idReporte", target = "reportId"),
+            @Mapping(source = "idVariable", target = "variableId"),
             @Mapping(source = "dato", target = "data")
     })
     VariableData toVariableData(DatoVariable datoVariable);

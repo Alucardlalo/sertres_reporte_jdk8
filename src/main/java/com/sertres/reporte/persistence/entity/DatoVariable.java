@@ -20,7 +20,6 @@ public class DatoVariable {
 
     private String dato;
 
-
     @OneToMany(mappedBy = "datoVariable")
     private List<Reporte> reportes;
 

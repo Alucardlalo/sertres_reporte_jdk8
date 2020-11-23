@@ -9,18 +9,18 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class})
+@Mapper(componentModel = "spring")//, uses = {ReportTypeMapper.class})
 public interface ReportMapper {
 
     @Mappings({
             @Mapping(source = "idReporte", target = "reportId"),
+            @Mapping(source = "idTipoReporte", target = "reportTypeId"),
             @Mapping(source = "idDispositivo", target = "deviceId"),
             @Mapping(source = "tituloReporte", target = "reportTittle"),
             @Mapping(source = "fechaCompromiso", target = "commitmentDate"),
             @Mapping(source = "fechaInicio", target = "beginDate"),
             @Mapping(source = "fechaFin", target = "endDate"),
-            @Mapping(source = "estado", target = "status"),
-            @Mapping(source = "tipoReporte", target = "reportType")
+            @Mapping(source = "estado", target = "status")
     })
     Report toReport(Reporte reporte);
 
