@@ -20,6 +20,15 @@ public class Report {
 
     private String status;
 
+    private ReportType reportType;
+
+    public ReportType getReportType() {
+        return reportType;
+    }
+
+    public void setReportType(ReportType reportType) {
+        this.reportType = reportType;
+    }
 
     public int getReportId() {
         return reportId;

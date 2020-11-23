@@ -12,6 +12,10 @@ public class VariableI {
 
     private int order;
 
+    private ReportType reportType;
+
+    private VariableData variableData;
+
     public int getVariableId() {
         return variableId;
     }
@@ -50,5 +54,21 @@ public class VariableI {
 
     public void setOrder(int order) {
         this.order = order;
+    }
+
+    public ReportType getReportType() {
+        return reportType;
+    }
+
+    public void setReportType(ReportType reportType) {
+        this.reportType = reportType;
+    }
+
+    public VariableData getVariableData() {
+        return variableData;
+    }
+
+    public void setVariableData(VariableData variableData) {
+        this.variableData = variableData;
     }
 }

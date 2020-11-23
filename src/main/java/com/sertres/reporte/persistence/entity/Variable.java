@@ -28,7 +28,7 @@ public class Variable {
 
     @ManyToOne
     @JoinColumn(name = "id_variable",insertable = false, updatable = false)
-    private DatoVariable datoVariable1;
+    private DatoVariable datoVariable;
 
     public Integer getIdVariable() {
         return idVariable;
