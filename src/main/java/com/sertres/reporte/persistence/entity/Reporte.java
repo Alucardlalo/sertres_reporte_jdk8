@@ -104,4 +104,21 @@ public class Reporte {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    /* geter y setter relacion
+    public TipoReporte getTipoReporte() {
+        return tipoReporte;
+    }
+
+    public void setTipoReporte(TipoReporte tipoReporte) {
+        this.tipoReporte = tipoReporte;
+    }
+
+    public DatoVariable getDatoVariable() {
+        return datoVariable;
+    }
+
+    public void setDatoVariable(DatoVariable datoVariable) {
+        this.datoVariable = datoVariable;
+    }*/
 }
