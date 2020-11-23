@@ -70,7 +70,7 @@ public class Variable {
         this.orden = orden;
     }
 
-    /* geter y setter relacion
+    // geter y setter relacion
     public TipoReporte getTipoReporte() {
         return tipoReporte;
     }
@@ -85,5 +85,5 @@ public class Variable {
 
     public void setDatoVariable(DatoVariable datoVariable) {
         this.datoVariable = datoVariable;
-    }*/
+    }
 }

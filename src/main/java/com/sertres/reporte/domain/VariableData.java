@@ -10,6 +10,10 @@ public class VariableData {
 
     private String data;
 
+    private Report reports;
+
+    private VariableI variablesI;
+
     public int getVariableDataId() {
         return variableDataId;
     }
@@ -40,5 +44,22 @@ public class VariableData {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    //geter and setter relacion
+    public Report getReports() {
+        return reports;
+    }
+
+    public void setReports(Report reports) {
+        this.reports = reports;
+    }
+
+    public VariableI getVariablesI() {
+        return variablesI;
+    }
+
+    public void setVariablesI(VariableI variablesI) {
+        this.variablesI = variablesI;
     }
 }

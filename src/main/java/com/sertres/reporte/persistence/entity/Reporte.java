@@ -40,7 +40,6 @@ public class Reporte {
     @JoinColumn(name = "id_reporte", insertable = false, updatable = false)
     private DatoVariable datoVariable;
 
-
     public Integer getIdReporte() {
         return idReporte;
     }
@@ -105,7 +104,7 @@ public class Reporte {
         this.estado = estado;
     }
 
-    /* geter y setter relacion
+    //geter y setter relacion
     public TipoReporte getTipoReporte() {
         return tipoReporte;
     }
@@ -120,5 +119,5 @@ public class Reporte {
 
     public void setDatoVariable(DatoVariable datoVariable) {
         this.datoVariable = datoVariable;
-    }*/
+    }
 }

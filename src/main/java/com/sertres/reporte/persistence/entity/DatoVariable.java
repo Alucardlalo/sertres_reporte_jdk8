@@ -57,4 +57,20 @@ public class DatoVariable {
     public void setDato(String dato) {
         this.dato = dato;
     }
+
+    public List<Reporte> getReportes() {
+        return reportes;
+    }
+
+    public void setReportes(List<Reporte> reportes) {
+        this.reportes = reportes;
+    }
+
+    public List<Variable> getVariables() {
+        return variables;
+    }
+
+    public void setVariables(List<Variable> variables) {
+        this.variables = variables;
+    }
 }

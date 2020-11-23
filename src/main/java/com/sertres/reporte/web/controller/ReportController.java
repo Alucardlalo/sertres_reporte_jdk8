@@ -23,9 +23,10 @@ public class ReportController {
         return reportService.getByReport(reportId);
     }
 
+    /*
     public List<Report> getByReportName(String reportName){
         return reportService.getByReportName(reportName);
-    }
+    }*/
 
     public Report save(Report report){
         return reportService.save(report);
