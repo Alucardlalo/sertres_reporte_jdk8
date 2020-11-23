@@ -3,8 +3,7 @@ package com.sertres.reporte.web.controller;
 import com.sertres.reporte.domain.Report;
 import com.sertres.reporte.domain.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,11 +14,13 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
+    @GetMapping("/all")
     public List<Report> getAll(){
         return reportService.getAll();
     }
 
-    public List<Report> getByReport(int reportId){
+    @GetMapping("/{id}")
+    public List<Report> getByReport(@PathVariable("id") int reportId){
         return reportService.getByReport(reportId);
     }
 
@@ -28,11 +29,13 @@ public class ReportController {
         return reportService.getByReportName(reportName);
     }*/
 
-    public Report save(Report report){
+    @PostMapping("/save")
+    public Report save(@RequestBody Report report){
         return reportService.save(report);
     }
 
-    public void delete(int reportId){
+    @PostMapping("/delete/{id}")
+    public void delete(@PathVariable("id")int reportId){
         reportService.delete(reportId);
     }
 
