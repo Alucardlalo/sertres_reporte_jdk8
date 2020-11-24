@@ -30,7 +30,7 @@ public class ReportController {
         return reportService.save(report);
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id")int reportId){
         reportService.delete(reportId);
     }
