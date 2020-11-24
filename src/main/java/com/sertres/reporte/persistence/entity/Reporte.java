@@ -30,7 +30,7 @@ public class Reporte {
     @Column(name = "fecha_fin")
     private LocalDateTime fechaFin;
 
-    private String estado;
+    private boolean estado;
 
     @ManyToOne//relacion reporte tipoReporte
     @JoinColumn(name = "id_tipo_reporte",insertable = false, updatable = false)
@@ -39,6 +39,7 @@ public class Reporte {
     @ManyToOne
     @JoinColumn(name = "id_reporte", insertable = false, updatable = false)
     private DatoVariable datoVariable;
+
 
     public Integer getIdReporte() {
         return idReporte;
@@ -96,11 +97,11 @@ public class Reporte {
         this.fechaFin = fechaFin;
     }
 
-    public String getEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 

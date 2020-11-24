@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/report")
+@RequestMapping("/reporte")
 public class ReportController {
 
     @Autowired
@@ -24,10 +24,6 @@ public class ReportController {
         return reportService.getByReport(reportId);
     }
 
-    /*
-    public List<Report> getByReportName(String reportName){
-        return reportService.getByReportName(reportName);
-    }*/
 
     @PostMapping("/save")
     public Report save(@RequestBody Report report){

@@ -22,6 +22,8 @@ public interface VariableDataMapper {
 
     //conversion inversa
     @InheritInverseConfiguration
+    @Mapping(target = "reportes",ignore = true)
+    @Mapping(target = "variables",ignore = true)
     DatoVariable toDatoVariable(VariableData variableData);
 
 }

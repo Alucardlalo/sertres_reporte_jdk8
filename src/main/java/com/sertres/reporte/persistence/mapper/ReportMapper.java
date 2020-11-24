@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")//, uses = {ReportTypeMapper.class})
+@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class})
 public interface ReportMapper {
 
     @Mappings({
@@ -21,7 +21,7 @@ public interface ReportMapper {
             @Mapping(source = "fechaInicio", target = "beginDate"),
             @Mapping(source = "fechaFin", target = "endDate"),
             @Mapping(source = "estado", target = "status"),
-           // @Mapping(source = "tipoReporte" , target = "reportType")
+            @Mapping(source = "tipoReporte" , target = "reportType")
     })
     Report toReport(Reporte reporte);
 
@@ -29,6 +29,7 @@ public interface ReportMapper {
 
     //conversion inversa
     @InheritInverseConfiguration
-    //@Mapping(target = "tipoReporte", ignore = true)
+    @Mapping(target = "tipoReporte", ignore = true)
+    @Mapping(target = "datoVariable", ignore = true)
     Reporte toReport(Report report);
 }

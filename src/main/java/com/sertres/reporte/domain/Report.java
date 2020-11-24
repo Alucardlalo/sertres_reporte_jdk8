@@ -18,7 +18,7 @@ public class Report {
 
     private LocalDateTime endDate;
 
-    private String status;
+    private boolean status;
 
     private ReportType reportType;
 
@@ -86,11 +86,11 @@ public class Report {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 }

@@ -23,5 +23,7 @@ public interface ReportTypeMapper {
 
     //conversion inversa
     @InheritInverseConfiguration
+    @Mapping(target = "reportes",ignore = true)
+    @Mapping(target = "variables",ignore = true)
     TipoReporte toTipoReporte(ReportType reportType);
 }
