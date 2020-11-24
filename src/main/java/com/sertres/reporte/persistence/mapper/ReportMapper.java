@@ -20,8 +20,8 @@ public interface ReportMapper {
             @Mapping(source = "fechaCompromiso", target = "commitmentDate"),
             @Mapping(source = "fechaInicio", target = "beginDate"),
             @Mapping(source = "fechaFin", target = "endDate"),
-            @Mapping(source = "estado", target = "status")
-            //@Mapping(source = "tipoReporte" , target = "reportType")
+            @Mapping(source = "estado", target = "status"),
+           // @Mapping(source = "tipoReporte" , target = "reportType")
     })
     Report toReport(Reporte reporte);
 

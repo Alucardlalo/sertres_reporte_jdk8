@@ -9,16 +9,16 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")//, uses = {ReportTypeMapper.class})
+@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class})
 public interface VariableMapper {
     @Mappings({
             @Mapping(source = "idVariable", target = "variableId"),
             @Mapping(source = "idTipoReporte", target = "reportTypeId"),
             @Mapping(source = "nombreVariable", target = "variableName"),
             @Mapping(source = "etiquetaVariable", target = "variableLabel"),
-            @Mapping(source = "orden", target = "order")
-            //@Mapping(source = "tipoReporte",target = "reportType"),
-            //@Mapping(source = "datoVariable",target = "variableData")
+            @Mapping(source = "orden", target = "order"),
+            @Mapping(source = "tipoReporte",target = "reportType"),
+
     })
     VariableI toVariableI(Variable variable);
 
@@ -26,7 +26,5 @@ public interface VariableMapper {
 
     //mapeio inverso
     @InheritInverseConfiguration
-    //@Mapping(target = "datoVariable", ignore = true)
-    //@Mapping(target = "tipoReporte",ignore = true)
     Variable toVariable(VariableI variableI);
 }

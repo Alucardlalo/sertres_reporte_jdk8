@@ -23,9 +23,7 @@ public class ReportService {
         return reportRepository.GetByReport(reportId);
     }
 
-    public List<Report> getByReportName(String reportName){
-        return reportRepository.GetByNameReport(reportName);
-    }
+
 
     //save and delete
     public Report save(Report report){

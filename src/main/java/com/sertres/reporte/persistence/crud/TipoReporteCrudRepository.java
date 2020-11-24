@@ -9,5 +9,5 @@ public interface TipoReporteCrudRepository extends CrudRepository<TipoReporte, I
 
     //Querry method para obtener lista de todos los tiposReporte
     List<TipoReporte> findByIdTipoReporte(int idTipoReporte);
-    List<TipoReporte> findByIdReporte(int idReporte);
+    //List<TipoReporte> findByIdReporte(int idReporte);
 }

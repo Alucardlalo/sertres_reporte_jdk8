@@ -30,11 +30,7 @@ public class ReporteRepository implements ReportRepository {
         return mapper.toReports(reportes);
     }
 
-    @Override
-    public List<Report> GetByNameReport(String reportTittle) {
-        List<Reporte> reportes = reporteCrudRepository.findByNameReporte(reportTittle);
-        return mapper.toReports(reportes);
-    }
+
 
     @Override
     public Report save(Report report) {

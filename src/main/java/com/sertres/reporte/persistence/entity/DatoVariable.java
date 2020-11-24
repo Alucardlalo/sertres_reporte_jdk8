@@ -23,7 +23,7 @@ public class DatoVariable {
     @OneToMany(mappedBy = "datoVariable")
     private List<Reporte> reportes;
 
-    @OneToMany(mappedBy = "datoVariable")
+    @OneToMany(mappedBy = "datoVariableV")
     private List<Variable> variables;
 
     public Integer getIdDatoVariable() {

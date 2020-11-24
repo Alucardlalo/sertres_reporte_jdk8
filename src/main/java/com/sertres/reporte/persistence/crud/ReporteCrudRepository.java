@@ -9,5 +9,5 @@ public interface ReporteCrudRepository extends CrudRepository <Reporte, Integer>
 
     //Querry method para obtener lista de todos los Reportes
     List<Reporte> findByIdReporte(int idReporte);
-    List<Reporte> findByNameReporte(String tituloReporte);
+    //List<Reporte> findByNameReporte(String tituloReporte);
 }
