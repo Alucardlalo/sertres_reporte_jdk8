@@ -25,7 +25,7 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-starter-test'
 
 
-	//implementation 'com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8' //libreria para sql server microsoft
+	//runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8' //libreria para sql server microsoft
 
 }
 
