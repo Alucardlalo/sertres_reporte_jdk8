@@ -7,23 +7,25 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")//, uses = {ReportMapper.class , VariableMapper.class})
+import java.util.List;
+
+@Mapper(componentModel = "spring", uses = {ReportMapper.class})
 public interface VariableDataMapper {
 
     @Mappings({
             @Mapping(source = "idDatoVariable", target = "variableDataId"),
             @Mapping(source = "idReporte", target = "reportId"),
             @Mapping(source = "idVariable", target = "variableId"),
-            @Mapping(source = "dato", target = "data")
-           // @Mapping(source = "reportes", target = "reports"),
-            //@Mapping(source = "variables", target = "variablesI")
+            @Mapping(source = "dato", target = "data"),
+            //@Mapping(source = "reportes1", target = "report1")
     })
     VariableData toVariableData(DatoVariable datoVariable);
 
+    List<VariableData> toVariableDatas(List<DatoVariable> variableDatas);
+
     //conversion inversa
     @InheritInverseConfiguration
-    @Mapping(target = "reportes",ignore = true)
-    @Mapping(target = "variables",ignore = true)
+    @Mapping(target = "reportes1",ignore = true)
     DatoVariable toDatoVariable(VariableData variableData);
 
 }

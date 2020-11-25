@@ -3,7 +3,7 @@ package com.sertres.reporte.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "variables")
+@Table(name = "variable")
 public class Variable {
 
     @Id

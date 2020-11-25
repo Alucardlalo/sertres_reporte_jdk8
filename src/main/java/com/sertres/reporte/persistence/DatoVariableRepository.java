@@ -1,5 +1,7 @@
 package com.sertres.reporte.persistence;
 
+import com.sertres.reporte.domain.VariableData;
+import com.sertres.reporte.domain.repository.VariableDataRepository;
 import com.sertres.reporte.persistence.crud.DatoVariableCrudRepository;
 import com.sertres.reporte.persistence.entity.DatoVariable;
 import com.sertres.reporte.persistence.mapper.VariableDataMapper;
@@ -9,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class DatoVariableRepository {
+public class DatoVariableRepository implements VariableDataRepository {
 
     @Autowired
     private DatoVariableCrudRepository datoVariableCrudRepository;
@@ -18,21 +20,25 @@ public class DatoVariableRepository {
     private VariableDataMapper mapper;
     //no se han creado los mapeos
 
-    //metodo para recuperar todos los datos variable
-    public List<DatoVariable> GetAllDatoVariable(){
-        return (List<DatoVariable>) datoVariableCrudRepository.findAll();
+    @Override
+    public List<VariableData> GetAll() {
+        List<DatoVariable> datosVariables = (List<DatoVariable>) datoVariableCrudRepository.findAll();
+        return mapper.toVariableDatas(datosVariables);
     }
 
-    //obtener Dato variable mediante id reporte
-    public List<DatoVariable> GetByIdReporte(int idReporte){
-        return datoVariableCrudRepository.findByIdReporte(idReporte);
+    @Override
+    public List<VariableData> GetByReportId(int ReportId) {
+        List<DatoVariable> datoVariables = datoVariableCrudRepository.findByIdReporte(ReportId);
+        return mapper.toVariableDatas(datoVariables);
     }
 
-    //save and delete
-    public DatoVariable save(DatoVariable datoVariable){
-        return datoVariableCrudRepository.save(datoVariable);
+    @Override
+    public VariableData save(VariableData variableData) {
+        DatoVariable variableData1 = mapper.toDatoVariable(variableData);
+        return mapper.toVariableData(datoVariableCrudRepository.save(variableData1));
     }
 
+    @Override
     public void delete (int idDatoVariable){
         datoVariableCrudRepository.deleteById(idDatoVariable);
     }

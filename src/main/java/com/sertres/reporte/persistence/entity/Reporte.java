@@ -105,6 +105,10 @@ public class Reporte {
         this.estado = estado;
     }
 
+    public boolean isEstado() {
+        return estado;
+    }
+
     //geter y setter relacion
     public TipoReporte getTipoReporte() {
         return tipoReporte;
