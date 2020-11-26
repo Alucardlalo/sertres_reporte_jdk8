@@ -26,9 +26,7 @@ public class Variable {
     @JoinColumn(name = "id_tipo_reporte",insertable = false, updatable = false)
     private TipoReporte tipoReporte;
 
-    @ManyToOne
-    @JoinColumn(name = "id_variable",insertable = false, updatable = false)
-    private DatoVariable datoVariableV;
+
 
     public Integer getIdVariable() {
         return idVariable;
@@ -79,11 +77,5 @@ public class Variable {
         this.tipoReporte = tipoReporte;
     }
 
-    public DatoVariable getDatoVariableV() {
-        return datoVariableV;
-    }
 
-    public void setDatoVariableV(DatoVariable datoVariable) {
-        this.datoVariableV = datoVariable;
-    }
 }

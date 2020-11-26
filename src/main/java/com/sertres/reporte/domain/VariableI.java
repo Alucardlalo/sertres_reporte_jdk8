@@ -1,5 +1,7 @@
 package com.sertres.reporte.domain;
 
+import com.sertres.reporte.persistence.entity.Variable;
+
 public class VariableI {
 
     private int variableId;
@@ -13,8 +15,6 @@ public class VariableI {
     private int order;
 
     private ReportType reportType;
-
-    private VariableData variableData;
 
     public int getVariableId() {
         return variableId;
@@ -64,11 +64,5 @@ public class VariableI {
         this.reportType = reportType;
     }
 
-    public VariableData getVariableData() {
-        return variableData;
-    }
 
-    public void setVariableData(VariableData variableData) {
-        this.variableData = variableData;
-    }
 }
