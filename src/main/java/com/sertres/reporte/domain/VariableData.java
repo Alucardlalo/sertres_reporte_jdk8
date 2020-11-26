@@ -44,13 +44,4 @@ public class VariableData {
         this.data = data;
     }
 
-    private VariableI variableI1;
-
-    public VariableI getVariableI1() {
-        return variableI1;
-    }
-
-    public void setVariableI1(VariableI variableI1) {
-        this.variableI1 = variableI1;
-    }
 }

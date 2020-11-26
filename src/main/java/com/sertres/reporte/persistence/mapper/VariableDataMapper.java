@@ -16,8 +16,7 @@ public interface VariableDataMapper {
             @Mapping(source = "idDatoVariable", target = "variableDataId"),
             @Mapping(source = "idReporte", target = "reportId"),
             @Mapping(source = "idVariable", target = "variableId"),
-            @Mapping(source = "dato", target = "data"),
-            //@Mapping(source = "reportes1", target = "report1")
+            @Mapping(source = "dato", target = "data")
     })
     VariableData toVariableData(DatoVariable datoVariable);
 
@@ -25,7 +24,6 @@ public interface VariableDataMapper {
 
     //conversion inversa
     @InheritInverseConfiguration
-    @Mapping(target = "reportes1",ignore = true)
     DatoVariable toDatoVariable(VariableData variableData);
 
 }

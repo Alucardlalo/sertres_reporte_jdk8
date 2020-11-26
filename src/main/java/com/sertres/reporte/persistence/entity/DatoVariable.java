@@ -20,17 +20,6 @@ public class DatoVariable {
 
     private String dato;
 
-    @OneToMany(mappedBy = "datoVariable")
-    private List<Reporte> reportes1;
-
-    public List<Reporte> getReportes1() {
-        return reportes1;
-    }
-
-    public void setReportes1(List<Reporte> reportes1) {
-        this.reportes1 = reportes1;
-    }
-
     public Integer getIdDatoVariable() {
         return idDatoVariable;
     }
