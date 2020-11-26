@@ -63,4 +63,16 @@ public class DatoVariable {
     public void setReporteDatoV(Reporte reporteDatoV) {
         this.reporteDatoV = reporteDatoV;
     }
+
+    @OneToOne
+    @JoinColumn(name = "id_variable", insertable = false, updatable = false)
+    private Variable variable;
+
+    public Variable getVariable() {
+        return variable;
+    }
+
+    public void setVariable(Variable variable) {
+        this.variable = variable;
+    }
 }

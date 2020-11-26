@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {ReportMapper.class})
+@Mapper(componentModel = "spring", uses = {VariableMapper.class, ReportMapper.class})
 public interface VariableDataMapper {
 
     @Mappings({
@@ -17,6 +17,7 @@ public interface VariableDataMapper {
             @Mapping(source = "idReporte", target = "reportId"),
             @Mapping(source = "idVariable", target = "variableId"),
             @Mapping(source = "dato", target = "data"),
+            @Mapping(source = "variable", target = "variableI"),
             @Mapping(source = "reporteDatoV", target = "report")
     })
     VariableData toVariableData(DatoVariable datoVariable);
