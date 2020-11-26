@@ -44,4 +44,13 @@ public class VariableData {
         this.data = data;
     }
 
+    private Report report;
+
+    public Report getReport() {
+        return report;
+    }
+
+    public void setReport(Report report) {
+        this.report = report;
+    }
 }

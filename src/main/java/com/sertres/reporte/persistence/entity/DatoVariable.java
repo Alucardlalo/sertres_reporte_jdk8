@@ -52,4 +52,15 @@ public class DatoVariable {
         this.dato = dato;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "id_reporte",updatable = false,insertable = false)
+    private Reporte reporteDatoV;
+
+    public Reporte getReporteDatoV() {
+        return reporteDatoV;
+    }
+
+    public void setReporteDatoV(Reporte reporteDatoV) {
+        this.reporteDatoV = reporteDatoV;
+    }
 }

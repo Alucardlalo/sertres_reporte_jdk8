@@ -16,7 +16,8 @@ public interface VariableDataMapper {
             @Mapping(source = "idDatoVariable", target = "variableDataId"),
             @Mapping(source = "idReporte", target = "reportId"),
             @Mapping(source = "idVariable", target = "variableId"),
-            @Mapping(source = "dato", target = "data")
+            @Mapping(source = "dato", target = "data"),
+            @Mapping(source = "reporteDatoV", target = "report")
     })
     VariableData toVariableData(DatoVariable datoVariable);
 
