@@ -8,7 +8,7 @@ public class ReportType {
 
     private String reportType;
 
-    private String description;
+    private String descriptionI;
 
     public int getReportTypeId() {
         return reportTypeId;
@@ -26,11 +26,11 @@ public class ReportType {
         this.reportType = reportType;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescriptionI() {
+        return descriptionI;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescriptionI(String descriptionI) {
+        this.descriptionI = descriptionI;
     }
 }

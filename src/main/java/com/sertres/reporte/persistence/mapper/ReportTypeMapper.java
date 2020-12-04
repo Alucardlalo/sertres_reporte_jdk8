@@ -15,7 +15,7 @@ public interface ReportTypeMapper {
     @Mappings({
             @Mapping( source = "idTipoReporte" ,target = "reportTypeId"),
             @Mapping( source = "tipoReporte" ,target = "reportType"),
-            @Mapping( source = "descripcion" ,target = "description" )
+            @Mapping( source = "descripcion" ,target = "descriptionI")
     })
     ReportType toReportType(TipoReporte tipoReporte);
 
