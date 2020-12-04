@@ -35,7 +35,7 @@ public class TipoReporteRepository implements ReportTypeRepository {
     @Override
     public Optional<List<ReportType>> GetReportType(int reportTypeId) {
         List<TipoReporte> tipoReportes = tipoReporteCrudRepository.findByIdTipoReporte(reportTypeId);
-        return Optional.of(mapper.toReportTypes(tipoReportes));//resive un optional
+        return Optional.of(mapper.toReportTypes(tipoReportes));//receive un optional
     }
 
     @Override
