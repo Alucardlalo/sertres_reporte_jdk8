@@ -25,10 +25,6 @@ public class DeviceService {
         return deviceRepository.getByDeviceStatus(deviceStatusId);
     }
 
-    public List<Device> getByDeviceType(String deviceType){
-        return deviceRepository.getByDeviceType(deviceType);
-    }
-
     //save and delete
     public Device save(Device device){
         return deviceRepository.save(device);

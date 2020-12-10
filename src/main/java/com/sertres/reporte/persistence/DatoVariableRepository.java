@@ -18,7 +18,7 @@ public class DatoVariableRepository implements VariableDataRepository {
 
     @Autowired
     private VariableDataMapper mapper;
-    //no se han creado los mapeos
+
 
     @Override
     public List<VariableData> GetAll() {

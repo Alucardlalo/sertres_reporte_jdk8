@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AccessLevelService {
@@ -19,10 +20,6 @@ public class AccessLevelService {
 
     public List<AccessLevel> getByAccessLevelId(int accessLevelId){
         return accessLevelRepository.getByAcceslevelId(accessLevelId);
-    }
-
-    public List<AccessLevel> getByAccessLevelType(String accessType){
-        return accessLevelRepository.getByAccessLevelType(accessType);
     }
 
     //save and delete

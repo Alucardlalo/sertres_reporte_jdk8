@@ -8,5 +8,6 @@ import java.util.List;
 public interface UsuarioCrudRepository extends CrudRepository<Usuario, Integer> {
 
     List<Usuario> findByIdUsuario (int idUsuario);
+    List<Usuario> findByUserAccessLevel (int idAccessLevel);
 
 }
