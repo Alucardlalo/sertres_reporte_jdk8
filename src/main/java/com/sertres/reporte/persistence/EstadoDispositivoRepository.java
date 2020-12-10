@@ -28,7 +28,7 @@ public class EstadoDispositivoRepository implements DeviceStatusRepository {
     @Override
     public DeviceStatus save(DeviceStatus deviceStatus) {
         EstadoDispositivo estadoDispositivoS = mapper.toEstadoDispositivo(deviceStatus);
-        return mapper.toDeviceStatus(estadoDispositivoS);
+        return mapper.toDeviceStatus(estadoDispositivoCrudRepository.save(estadoDispositivoS));
     }
 
     @Override

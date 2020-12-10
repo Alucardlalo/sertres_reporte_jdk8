@@ -104,23 +104,5 @@ public class Device {
         this.building = building;
     }
     //relationship
-    private DeviceStatus deviceStatusRel;
 
-    private Building buildingRel;
-
-    public DeviceStatus getDeviceStatusRel() {
-        return deviceStatusRel;
-    }
-
-    public void setDeviceStatusRel(DeviceStatus deviceStatusRel) {
-        this.deviceStatusRel = deviceStatusRel;
-    }
-
-    public Building getBuildingRel() {
-        return buildingRel;
-    }
-
-    public void setBuildingRel(Building buildingRel) {
-        this.buildingRel = buildingRel;
-    }
 }

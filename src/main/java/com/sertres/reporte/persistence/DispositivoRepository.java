@@ -46,7 +46,7 @@ public class DispositivoRepository implements DeviceRepository {
     @Override
     public Device save(Device device) {
         Dispositivo dispositivoS = mapper.toDispositivo(device);
-        return mapper.toDevice(dispositivoS);
+        return mapper.toDevice(dispositivoCrudRepository.save(dispositivoS));
     }
 
     @Override

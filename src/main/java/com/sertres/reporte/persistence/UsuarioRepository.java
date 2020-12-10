@@ -40,7 +40,7 @@ public class UsuarioRepository implements UserRepository {
     @Override
     public User save(User user) {
         Usuario usuarioS = mapper.toUsuario(user);
-        return mapper.toUser(usuarioS);
+        return mapper.toUser(usuarioCrudRepository.save(usuarioS));
     }
 
     @Override

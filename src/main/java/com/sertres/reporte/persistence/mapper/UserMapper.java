@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {AccessLevelMapper.class})
+@Mapper(componentModel = "spring")//, uses = {AccessLevelMapper.class})
 public interface UserMapper {
     @Mappings({
             @Mapping(source = "idUsuario", target = "userId"),
@@ -19,14 +19,13 @@ public interface UserMapper {
             @Mapping(source = "detallesUsuario", target = "userDetails"),
             @Mapping(source = "emailUsuario", target = "userMail"),
             @Mapping(source = "ultimoAcceso", target = "lastAccess"),
-            @Mapping(source = "nivelAcceso", target = "accessLevel"),
-            @Mapping(source = "nivelAccesoRel", target = "accessLevelRel")
+            @Mapping(source = "nivelAcceso",target = "accessLevel")
     })
     User toUser(Usuario usuario);
 
     List<User> toUsers(List<Usuario> usuarioList);
 
     @InheritInverseConfiguration
-    @Mapping(target = "nivelAccesoRel", ignore = true)
+    //@Mapping(target = "nivelAccesoRel", ignore = true)
     Usuario toUsuario (User user);
 }

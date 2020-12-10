@@ -42,14 +42,5 @@ public class Edificio {
         this.jsonEdificio = jsonEdificio;
     }
 
-    @OneToMany(mappedBy = "edificioRel")
-    private List<Dispositivo> dispositivoRelList;
 
-    public List<Dispositivo> getDispositivoRelList() {
-        return dispositivoRelList;
-    }
-
-    public void setDispositivoRelList(List<Dispositivo> dispositivoRelList) {
-        this.dispositivoRelList = dispositivoRelList;
-    }
 }

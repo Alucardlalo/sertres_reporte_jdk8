@@ -85,13 +85,5 @@ public class User {
     }
 
     //relacion user => AccessLevel
-    private AccessLevel accessLevelRel;
 
-    public AccessLevel getAccessLevelRel() {
-        return accessLevelRel;
-    }
-
-    public void setAccessLevelRel(AccessLevel accessLevelRel) {
-        this.accessLevelRel = accessLevelRel;
-    }
 }

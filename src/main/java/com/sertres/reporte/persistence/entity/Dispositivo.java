@@ -36,7 +36,7 @@ public class Dispositivo {
     @Column(name = "ultima_fecha_estado")
     private LocalDateTime ultimaFechaEstado;
 
-    //no necesita @Column porq tiene el mismo nombre que en la base de datos
+    @Column(name = "edificio")
     private Integer edificio;
 
     public Integer getIdDispositivo() {
@@ -120,27 +120,5 @@ public class Dispositivo {
     }
 
     //relaciones con edificio & dispositivo estado
-    @ManyToOne
-    @JoinColumn(name = "id_estado_dispositivo",insertable = false, updatable = false)
-    private EstadoDispositivo estadoDispositivoRel;
 
-    @ManyToOne
-    @JoinColumn(name = "id_edificio",insertable = false, updatable = false)
-    private Edificio edificioRel;
-
-    public EstadoDispositivo getEstadoDispositivoRel() {
-        return estadoDispositivoRel;
-    }
-
-    public void setEstadoDispositivoRel(EstadoDispositivo estadoDispositivoRel) {
-        this.estadoDispositivoRel = estadoDispositivoRel;
-    }
-
-    public Edificio getEdificioRel() {
-        return edificioRel;
-    }
-
-    public void setEdificioRel(Edificio edificioRel) {
-        this.edificioRel = edificioRel;
-    }
 }

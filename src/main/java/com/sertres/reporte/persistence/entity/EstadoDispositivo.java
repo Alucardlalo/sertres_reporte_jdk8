@@ -12,6 +12,7 @@ public class EstadoDispositivo {
     @Column(name = "id_estado_dispositivo")
     private Integer idEstadoDispositivo;
 
+    @Column(name = "descripcion")
     private String estadoDispositivoDescripcion;
 
 
@@ -32,14 +33,5 @@ public class EstadoDispositivo {
     }
 
     //relacion estadodispositivo & dispositivo
-    @OneToMany(mappedBy = "estadoDispositivoRel")
-    private List<Dispositivo> dispositivoRelList;
 
-    public List<Dispositivo> getDispositivoRelList() {
-        return dispositivoRelList;
-    }
-
-    public void setDispositivoRelList(List<Dispositivo> dispositivoRelList) {
-        this.dispositivoRelList = dispositivoRelList;
-    }
 }
