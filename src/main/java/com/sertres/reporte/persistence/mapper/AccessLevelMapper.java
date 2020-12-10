@@ -23,6 +23,6 @@ public interface AccessLevelMapper {
     List<AccessLevel> toAccessLevels(List<NivelAcceso> nivelAccesoList);
 
     @InheritInverseConfiguration
-    //@Mapping(target = "usuarioList",ignore = true)
+    @Mapping(target = "usuariosRel",ignore = true)
     NivelAcceso toNivelAcceso(AccessLevel accessLevel);
 }

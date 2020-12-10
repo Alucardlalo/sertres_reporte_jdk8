@@ -56,4 +56,14 @@ public class NivelAcceso {
 
     //relacion con user
 
+    @OneToMany(mappedBy = "nivelAccesoRel")
+    private List<Usuario> usuariosRel;
+
+    public List<Usuario> getUsuariosRel() {
+        return usuariosRel;
+    }
+
+    public void setUsuariosRel(List<Usuario> usuariosRel) {
+        this.usuariosRel = usuariosRel;
+    }
 }
