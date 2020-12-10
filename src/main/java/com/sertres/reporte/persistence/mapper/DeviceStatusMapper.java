@@ -21,5 +21,6 @@ public interface DeviceStatusMapper {
     List<DeviceStatus> toDeviceStatusL(List<EstadoDispositivo> estadoDispositivoList);
 
     @InheritInverseConfiguration
+    @Mapping(target = "dispositivoRelList",ignore = true)
     EstadoDispositivo toEstadoDispositivo(DeviceStatus deviceStatus);
 }

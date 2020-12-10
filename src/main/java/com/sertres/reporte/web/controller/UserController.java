@@ -30,12 +30,12 @@ public class UserController {
         return userService.getByAccessLevel(accessId);
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public User save(@RequestBody User user){
         return userService.save(user);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") int userId){
         userService.delete(userId);
     }

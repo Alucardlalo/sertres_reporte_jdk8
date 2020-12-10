@@ -34,12 +34,12 @@ public class DeviceController {
         return deviceService.getByDeviceStatus(statusId);
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public Device save(@RequestBody Device device){
         return deviceService.save(device);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") int deviceId){
         deviceService.delete(deviceId);
     }

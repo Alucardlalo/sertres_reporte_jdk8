@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface EdificioCrudRepository extends CrudRepository <Edificio , Integer> {
 
-    List<Edificio> finByIdEdificio (int idEdificio);
+    List<Edificio> findByIdEdificio (int idEdificio);
 }

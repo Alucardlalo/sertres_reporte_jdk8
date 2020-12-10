@@ -120,11 +120,11 @@ public class Dispositivo {
     }
 
     //relaciones con edificio & dispositivo estado
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_estado_dispositivo",insertable = false, updatable = false)
     private EstadoDispositivo estadoDispositivoRel;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_edificio",insertable = false, updatable = false)
     private Edificio edificioRel;
 

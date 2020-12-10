@@ -27,7 +27,7 @@ public class EdificioRepository implements BuildingRepository {
 
     @Override
     public List<Building> getByBuildingId(int buildingId) {
-        List<Edificio> edificios = edificioCrudRepository.finByIdEdificio(buildingId);
+        List<Edificio> edificios = edificioCrudRepository.findByIdEdificio(buildingId);
         return mapper.toBuildings(edificios);
     }
 

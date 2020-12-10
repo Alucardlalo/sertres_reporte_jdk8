@@ -33,7 +33,7 @@ public class UsuarioRepository implements UserRepository {
 
     @Override
     public List<User> getByAccessLevel(int AccessLevel) {
-        List<Usuario> usuarioLevel = usuarioCrudRepository.findByUserAccessLevel(AccessLevel);
+        List<Usuario> usuarioLevel = usuarioCrudRepository.findByIdUsuario(AccessLevel);
         return mapper.toUsers(usuarioLevel);
     }
 

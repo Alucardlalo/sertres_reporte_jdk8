@@ -23,5 +23,6 @@ public interface BuildingMapper {
     List<Building> toBuildings(List<Edificio> edificios);
 
     @InheritInverseConfiguration
+    @Mapping(target = "dispositivoRelList",ignore = true)
     Edificio toEdificio(Building building);
 }

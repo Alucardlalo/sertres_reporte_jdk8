@@ -30,6 +30,7 @@ public class DispositivoRepository implements DeviceRepository {
         List<Dispositivo> dispositivosI = dispositivoCrudRepository.findByIdDispositivo(deviceId);
         return mapper.toDevises(dispositivosI);
     }
+
     @Override
     public List<Device> getByBuildingId(int buildingId) {
         List<Dispositivo> dispositivoListB = dispositivoCrudRepository.findByIdDispositivo(buildingId);
@@ -38,7 +39,7 @@ public class DispositivoRepository implements DeviceRepository {
 
     @Override
     public List<Device> getByDeviceStatus(int deviceStatusId) {
-        List<Dispositivo> dispositivoListS = dispositivoCrudRepository.findByIdEstadoDispositivo(deviceStatusId);
+        List<Dispositivo> dispositivoListS = dispositivoCrudRepository.findByIdDispositivo(deviceStatusId);
         return mapper.toDevises(dispositivoListS);
     }
 

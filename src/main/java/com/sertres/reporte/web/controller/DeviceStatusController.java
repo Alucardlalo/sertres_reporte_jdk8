@@ -19,12 +19,12 @@ public class DeviceStatusController {
         return statusService.getAll();
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public DeviceStatus save(@RequestBody DeviceStatus deviceStatus){
         return statusService.save(deviceStatus);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") int statusId){
         statusService.delete(statusId);
     }

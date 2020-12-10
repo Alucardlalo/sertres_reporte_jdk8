@@ -24,12 +24,12 @@ public class AccessLevelController {
         return accessLevelService.getByAccessLevelId(accessLevel);
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public AccessLevel save(@RequestBody AccessLevel accessLevel){
         return accessLevelService.save(accessLevel);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") int accessLevelId){
          accessLevelService.delete(accessLevelId);
     }

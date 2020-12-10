@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Edificio")
+@RequestMapping("/edificio")
 public class BuildingController {
 
     @Autowired
@@ -24,12 +24,12 @@ public class BuildingController {
         return buildingService.getByBuildingId(buildingId);
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public Building save(@RequestBody Building building){
         return buildingService.save(building);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") int buildingId){
         buildingService.delete(buildingId);
     }
