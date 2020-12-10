@@ -1,6 +1,7 @@
 package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table (name = "estado_dispositivo")
@@ -11,7 +12,7 @@ public class EstadoDispositivo {
     @Column(name = "id_estado_dispositivo")
     private Integer idEstadoDispositivo;
 
-    private String descripcion;
+    private String estadoDispositivoDescripcion;
 
 
     public Integer getIdEstadoDispositivo() {
@@ -22,11 +23,23 @@ public class EstadoDispositivo {
         this.idEstadoDispositivo = idEstadoDispositivo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getEstadoDispositivoDescripcion() {
+        return estadoDispositivoDescripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setEstadoDispositivoDescripcion(String estadoDispositivoDescripcion) {
+        this.estadoDispositivoDescripcion = estadoDispositivoDescripcion;
+    }
+
+    //relacion estadodispositivo & dispositivo
+    @OneToMany(mappedBy = "estadoDispositivoRel")
+    private List<Dispositivo> dispositivoRelList;
+
+    public List<Dispositivo> getDispositivoRelList() {
+        return dispositivoRelList;
+    }
+
+    public void setDispositivoRelList(List<Dispositivo> dispositivoRelList) {
+        this.dispositivoRelList = dispositivoRelList;
     }
 }

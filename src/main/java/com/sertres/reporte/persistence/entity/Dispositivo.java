@@ -118,4 +118,29 @@ public class Dispositivo {
     public void setEdificio(Integer edificio) {
         this.edificio = edificio;
     }
+
+    //relaciones con edificio & dispositivo estado
+    @OneToMany
+    @JoinColumn(name = "id_estado_dispositivo",insertable = false, updatable = false)
+    private EstadoDispositivo estadoDispositivoRel;
+
+    @OneToMany
+    @JoinColumn(name = "id_edificio",insertable = false, updatable = false)
+    private Edificio edificioRel;
+
+    public EstadoDispositivo getEstadoDispositivoRel() {
+        return estadoDispositivoRel;
+    }
+
+    public void setEstadoDispositivoRel(EstadoDispositivo estadoDispositivoRel) {
+        this.estadoDispositivoRel = estadoDispositivoRel;
+    }
+
+    public Edificio getEdificioRel() {
+        return edificioRel;
+    }
+
+    public void setEdificioRel(Edificio edificioRel) {
+        this.edificioRel = edificioRel;
+    }
 }

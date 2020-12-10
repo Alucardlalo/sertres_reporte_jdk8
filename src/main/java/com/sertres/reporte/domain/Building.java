@@ -6,7 +6,7 @@ public class Building {
 
     private String buildingType;
 
-    private String json;
+    private String buildingJson;
 
     public int getBuildingId() {
         return buildingId;
@@ -24,11 +24,11 @@ public class Building {
         this.buildingType = buildingType;
     }
 
-    public String getJson() {
-        return json;
+    public String getBuildingJson() {
+        return buildingJson;
     }
 
-    public void setJson(String json) {
-        this.json = json;
+    public void setBuildingJson(String buildingJson) {
+        this.buildingJson = buildingJson;
     }
 }

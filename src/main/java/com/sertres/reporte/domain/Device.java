@@ -12,6 +12,8 @@ public class Device {
 
     private String deviceBrand;
 
+    private String deviceModel;
+
     private String deviceSeries;
 
     private String deviceType;
@@ -54,6 +56,14 @@ public class Device {
         this.deviceBrand = deviceBrand;
     }
 
+    public String getDeviceModel() {
+        return deviceModel;
+    }
+
+    public void setDeviceModel(String deviceModel) {
+        this.deviceModel = deviceModel;
+    }
+
     public String getDeviceSeries() {
         return deviceSeries;
     }
@@ -92,5 +102,25 @@ public class Device {
 
     public void setBuilding(int building) {
         this.building = building;
+    }
+    //relationship
+    private DeviceStatus deviceStatusRel;
+
+    private Building buildingRel;
+
+    public DeviceStatus getDeviceStatusRel() {
+        return deviceStatusRel;
+    }
+
+    public void setDeviceStatusRel(DeviceStatus deviceStatusRel) {
+        this.deviceStatusRel = deviceStatusRel;
+    }
+
+    public Building getBuildingRel() {
+        return buildingRel;
+    }
+
+    public void setBuildingRel(Building buildingRel) {
+        this.buildingRel = buildingRel;
     }
 }

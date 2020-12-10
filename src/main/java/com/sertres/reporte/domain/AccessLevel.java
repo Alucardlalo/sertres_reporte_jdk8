@@ -1,5 +1,7 @@
 package com.sertres.reporte.domain;
 
+import javax.persistence.OneToMany;
+
 public class AccessLevel {
 
     private int accessLevelId;
@@ -41,4 +43,5 @@ public class AccessLevel {
     public void setAccessLevelType(String accessLevelType) {
         this.accessLevelType = accessLevelType;
     }
+
 }

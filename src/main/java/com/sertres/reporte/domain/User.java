@@ -12,9 +12,9 @@ public class User {
 
     private String pass;
 
-    private String details;
+    private String userDetails;
 
-    private String mail;
+    private String UserMail;
 
     private LocalDateTime lastAccess;
 
@@ -52,20 +52,20 @@ public class User {
         this.pass = pass;
     }
 
-    public String getDetails() {
-        return details;
+    public String getUserDetails() {
+        return userDetails;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setUserDetails(String userDetails) {
+        this.userDetails = userDetails;
     }
 
-    public String getMail() {
-        return mail;
+    public String getUserMail() {
+        return UserMail;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setUserMail(String userMail) {
+        this.UserMail = userMail;
     }
 
     public LocalDateTime getLastAccess() {
@@ -82,5 +82,16 @@ public class User {
 
     public void setAccessLevel(int accessLevel) {
         this.accessLevel = accessLevel;
+    }
+
+    //relacion user => AccessLevel
+    private AccessLevel accessLevelRel;
+
+    public AccessLevel getAccessLevelRel() {
+        return accessLevelRel;
+    }
+
+    public void setAccessLevelRel(AccessLevel accessLevelRel) {
+        this.accessLevelRel = accessLevelRel;
     }
 }

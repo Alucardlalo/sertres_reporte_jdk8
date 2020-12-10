@@ -1,6 +1,7 @@
 package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "nivel_acceso")
@@ -51,5 +52,17 @@ public class NivelAcceso {
 
     public void setTipoNivelAcceso(String tipoNivelAcceso) {
         this.tipoNivelAcceso = tipoNivelAcceso;
+    }
+
+    //relacion con user
+    @OneToMany(mappedBy = "nivelAccesoRel")
+    private List<Usuario> usuarioList;
+
+    public List<Usuario> getUsuarioList() {
+        return usuarioList;
+    }
+
+    public void setUsuarioList(List<Usuario> usuarioList) {
+        this.usuarioList = usuarioList;
     }
 }

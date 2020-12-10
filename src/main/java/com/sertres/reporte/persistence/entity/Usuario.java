@@ -94,4 +94,17 @@ public class Usuario {
     public void setNivelAcceso(Integer nivelAcceso) {
         this.nivelAcceso = nivelAcceso;
     }
+
+    //relacion user => nivelAcceso
+    @ManyToOne
+    @JoinColumn(name = "id_nivelacceso", insertable = false, updatable = false)
+    private NivelAcceso nivelAccesoRel;
+
+    public NivelAcceso getNivelAccesoRel() {
+        return nivelAccesoRel;
+    }
+
+    public void setNivelAccesoRel(NivelAcceso nivelAccesoRel) {
+        this.nivelAccesoRel = nivelAccesoRel;
+    }
 }
