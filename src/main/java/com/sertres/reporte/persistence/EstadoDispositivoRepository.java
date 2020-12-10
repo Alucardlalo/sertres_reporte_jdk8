@@ -6,9 +6,11 @@ import com.sertres.reporte.persistence.crud.EstadoDispositivoCrudRepository;
 import com.sertres.reporte.persistence.entity.EstadoDispositivo;
 import com.sertres.reporte.persistence.mapper.DeviceStatusMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class EstadoDispositivoRepository implements DeviceStatusRepository {
 
     @Autowired

@@ -17,6 +17,10 @@ public class DeviceService {
         return deviceRepository.getAll();
     }
 
+    public List<Device> getByDeviceId(int buildingId){
+        return deviceRepository.getByDeviceId(buildingId);
+    }
+
     public List<Device> getByBuildingId(int buildingId){
         return deviceRepository.getByBuildingId(buildingId);
     }

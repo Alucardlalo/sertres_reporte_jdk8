@@ -26,6 +26,11 @@ public class DispositivoRepository implements DeviceRepository {
     }
 
     @Override
+    public List<Device> getByDeviceId(int deviceId){
+        List<Dispositivo> dispositivosI = dispositivoCrudRepository.findByIdDispositivo(deviceId);
+        return mapper.toDevises(dispositivosI);
+    }
+    @Override
     public List<Device> getByBuildingId(int buildingId) {
         List<Dispositivo> dispositivoListB = dispositivoCrudRepository.findByIdDispositivo(buildingId);
         return mapper.toDevises(dispositivoListB);

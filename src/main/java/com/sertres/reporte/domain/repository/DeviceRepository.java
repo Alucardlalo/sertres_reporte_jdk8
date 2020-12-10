@@ -7,6 +7,7 @@ import java.util.List;
 public interface DeviceRepository {
 
     List<Device> getAll();
+    List<Device> getByDeviceId(int deviceId);
     List<Device> getByBuildingId(int buildingId);
     List<Device> getByDeviceStatus (int deviceStatusId);
     //save and delete
