@@ -113,4 +113,14 @@ public class Device {
     public void setDeviceStatusRel(DeviceStatus deviceStatusRel) {
         this.deviceStatusRel = deviceStatusRel;
     }
+
+    private Building buildingRel;
+
+    public Building getBuildingRel() {
+        return buildingRel;
+    }
+
+    public void setBuildingRel(Building buildingRel) {
+        this.buildingRel = buildingRel;
+    }
 }

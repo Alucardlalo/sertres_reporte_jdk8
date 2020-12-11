@@ -131,4 +131,16 @@ public class Dispositivo {
     public void setEstadoDispositivoRel(EstadoDispositivo estadoDispositivoRel) {
         this.estadoDispositivoRel = estadoDispositivoRel;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "edificio", insertable = false, updatable = false)
+    private Edificio edificioRel;
+
+    public Edificio getEdificioRel() {
+        return edificioRel;
+    }
+
+    public void setEdificioRel(Edificio edificioRel) {
+        this.edificioRel = edificioRel;
+    }
 }
