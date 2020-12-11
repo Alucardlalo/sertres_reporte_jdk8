@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class , DeviceMapper.class})
+@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class , DeviceMapper.class, ReportStatusMapper.class})
 public interface ReportMapper {
 
     @Mappings({
@@ -20,9 +20,10 @@ public interface ReportMapper {
             @Mapping(source = "fechaCompromiso", target = "commitmentDate"),
             @Mapping(source = "fechaInicio", target = "beginDate"),
             @Mapping(source = "fechaFin", target = "endDate"),
-            @Mapping(source = "estado", target = "status"),
+            @Mapping(source = "estadoReporte", target = "status"),
             @Mapping(source = "tipoReporte" , target = "reportType"),
-            @Mapping(source = "dispositivoRel",target = "deviceRel")
+            @Mapping(source = "dispositivoRel",target = "deviceRel"),
+            @Mapping(source = "estadoReporteRel",target = "reportStatusRel")
     })
     Report toReport(Reporte reporte);
 
@@ -33,5 +34,6 @@ public interface ReportMapper {
     @Mapping(target = "tipoReporte", ignore = true)
     @Mapping(target = "datoVariable", ignore = true)
     @Mapping(target = "dispositivoRel",ignore = true)
+    @Mapping(target = "estadoReporteRel",ignore = true)
     Reporte toReport(Report report);
 }

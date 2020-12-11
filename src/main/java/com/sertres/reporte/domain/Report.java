@@ -94,7 +94,7 @@ public class Report {
         this.status = status;
     }
 
-    //relationshio with device and
+    //relationshio with device and reportstatus
 
     private Device deviceRel;
 
@@ -104,5 +104,15 @@ public class Report {
 
     public void setDeviceRel(Device deviceRel) {
         this.deviceRel = deviceRel;
+    }
+
+    private ReportStatus reportStatusRel;
+
+    public ReportStatus getReportStatusRel() {
+        return reportStatusRel;
+    }
+
+    public void setReportStatusRel(ReportStatus reportStatusRel) {
+        this.reportStatusRel = reportStatusRel;
     }
 }

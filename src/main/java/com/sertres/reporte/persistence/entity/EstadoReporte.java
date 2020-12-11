@@ -1,6 +1,7 @@
 package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "estado_reporte")
@@ -28,5 +29,17 @@ public class EstadoReporte {
 
     public void setEstadoReporteDescripcion(String estadoReporteDescripcion) {
         this.estadoReporteDescripcion = estadoReporteDescripcion;
+    }
+
+    //relacion con reporte
+    @OneToMany(mappedBy = "estadoReporteRel")
+    private List<Reporte> reporteRelList;
+
+    public List<Reporte> getReporteRelList() {
+        return reporteRelList;
+    }
+
+    public void setReporteRelList(List<Reporte> reporteRelList) {
+        this.reporteRelList = reporteRelList;
     }
 }

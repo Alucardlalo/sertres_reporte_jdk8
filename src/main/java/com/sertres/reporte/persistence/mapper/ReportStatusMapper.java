@@ -21,6 +21,6 @@ public interface ReportStatusMapper {
     List<ReportStatus> toReportStatusL (List<EstadoReporte> estadoReporteList);
 
     @InheritInverseConfiguration
-
+    @Mapping(target = "reporteRelList",ignore = true)
     EstadoReporte toEstadoReporte (ReportStatus reportStatus);
 }

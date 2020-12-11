@@ -30,7 +30,8 @@ public class Reporte {
     @Column(name = "fecha_fin")
     private LocalDateTime fechaFin;
 
-    private Integer estado;
+    @Column(name = "estado")
+    private Integer estadoReporte;
 
     @ManyToOne//relacion reporte tipoReporte
     @JoinColumn(name = "id_tipo_reporte", insertable = false, updatable = false)
@@ -97,12 +98,12 @@ public class Reporte {
         this.fechaFin = fechaFin;
     }
 
-    public Integer getEstado() {
-        return estado;
+    public Integer getEstadoReporte() {
+        return estadoReporte;
     }
 
-    public void setEstado(Integer estado) {
-        this.estado = estado;
+    public void setEstadoReporte(Integer estadoReporte) {
+        this.estadoReporte = estadoReporte;
     }
 
     //geter y setter relacion
@@ -133,5 +134,17 @@ public class Reporte {
 
     public void setDispositivoRel(Dispositivo dispositivoRel) {
         this.dispositivoRel = dispositivoRel;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "estado",insertable = false,updatable = false)
+    private EstadoReporte estadoReporteRel;
+
+    public EstadoReporte getEstadoReporteRel() {
+        return estadoReporteRel;
+    }
+
+    public void setEstadoReporteRel(EstadoReporte estadoReporteRel) {
+        this.estadoReporteRel = estadoReporteRel;
     }
 }
