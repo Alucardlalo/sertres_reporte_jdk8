@@ -35,5 +35,6 @@ public interface DeviceMapper {
     @InheritInverseConfiguration
     @Mapping(target = "edificioRel", ignore = true)
     @Mapping(target = "estadoDispositivoRel", ignore = true)
+    @Mapping(target = "reporteRelList",ignore = true)
     Dispositivo toDispositivo(Device device);
 }

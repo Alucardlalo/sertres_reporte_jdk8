@@ -2,6 +2,7 @@ package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table (name= "dispositivo")
@@ -142,5 +143,17 @@ public class Dispositivo {
 
     public void setEdificioRel(Edificio edificioRel) {
         this.edificioRel = edificioRel;
+    }
+
+    //relacion con reporte
+    @OneToMany(mappedBy = "dispositivoRel")
+    private List<Reporte> reporteRelList;
+
+    public List<Reporte> getReporteRelList() {
+        return reporteRelList;
+    }
+
+    public void setReporteRelList(List<Reporte> reporteRelList) {
+        this.reporteRelList = reporteRelList;
     }
 }

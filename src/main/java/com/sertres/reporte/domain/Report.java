@@ -18,7 +18,7 @@ public class Report {
 
     private LocalDateTime endDate;
 
-    private boolean status;
+    private int status;
 
     private ReportType reportType;
 
@@ -86,11 +86,23 @@ public class Report {
         this.endDate = endDate;
     }
 
-    public boolean getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
+    }
+
+    //relationshio with device and
+
+    private Device deviceRel;
+
+    public Device getDeviceRel() {
+        return deviceRel;
+    }
+
+    public void setDeviceRel(Device deviceRel) {
+        this.deviceRel = deviceRel;
     }
 }

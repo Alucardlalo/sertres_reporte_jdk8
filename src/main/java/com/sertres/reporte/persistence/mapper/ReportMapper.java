@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class})
+@Mapper(componentModel = "spring", uses = {ReportTypeMapper.class , DeviceMapper.class})
 public interface ReportMapper {
 
     @Mappings({
@@ -21,7 +21,8 @@ public interface ReportMapper {
             @Mapping(source = "fechaInicio", target = "beginDate"),
             @Mapping(source = "fechaFin", target = "endDate"),
             @Mapping(source = "estado", target = "status"),
-            @Mapping(source = "tipoReporte" , target = "reportType")
+            @Mapping(source = "tipoReporte" , target = "reportType"),
+            @Mapping(source = "dispositivoRel",target = "deviceRel")
     })
     Report toReport(Reporte reporte);
 
@@ -31,5 +32,6 @@ public interface ReportMapper {
     @InheritInverseConfiguration
     @Mapping(target = "tipoReporte", ignore = true)
     @Mapping(target = "datoVariable", ignore = true)
+    @Mapping(target = "dispositivoRel",ignore = true)
     Reporte toReport(Report report);
 }
