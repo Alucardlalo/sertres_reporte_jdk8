@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {DeviceStatusMapper.class})
 public interface DeviceMapper {
 
     @Mappings({
@@ -22,8 +22,9 @@ public interface DeviceMapper {
             @Mapping(source = "tipoDispositivo", target = "deviceType"),
             @Mapping(source = "estadoDispositivo", target = "deviceStatus"),
             @Mapping(source = "ultimaFechaEstado", target = "lastDateStatus"),
-            @Mapping(source = "edificio", target = "building")
+            @Mapping(source = "edificio", target = "building"),
             //relaciones con estadoDispositivo & Edificio
+            @Mapping(source = "estadoDispositivoRel",target = "deviceStatusRel")
 
     })
     Device toDevice(Dispositivo dispositivo);
@@ -32,6 +33,6 @@ public interface DeviceMapper {
 
     @InheritInverseConfiguration
     //@Mapping(target = "edificioRel", ignore = true)
-    //@Mapping(target = "estadoDispositivoRel", ignore = true)
+    @Mapping(target = "estadoDispositivoRel", ignore = true)
     Dispositivo toDispositivo(Device device);
 }

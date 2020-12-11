@@ -120,5 +120,15 @@ public class Dispositivo {
     }
 
     //relaciones con edificio & dispositivo estado
+    @ManyToOne
+    @JoinColumn(name = "estado_dispositivo",insertable = false,updatable = false)
+    private EstadoDispositivo estadoDispositivoRel;
 
+    public EstadoDispositivo getEstadoDispositivoRel() {
+        return estadoDispositivoRel;
+    }
+
+    public void setEstadoDispositivoRel(EstadoDispositivo estadoDispositivoRel) {
+        this.estadoDispositivoRel = estadoDispositivoRel;
+    }
 }

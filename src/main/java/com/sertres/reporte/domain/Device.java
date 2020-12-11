@@ -104,5 +104,13 @@ public class Device {
         this.building = building;
     }
     //relationship
+    private DeviceStatus deviceStatusRel;
 
+    public DeviceStatus getDeviceStatusRel() {
+        return deviceStatusRel;
+    }
+
+    public void setDeviceStatusRel(DeviceStatus deviceStatusRel) {
+        this.deviceStatusRel = deviceStatusRel;
+    }
 }
