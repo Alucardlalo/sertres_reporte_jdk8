@@ -15,7 +15,7 @@ public class NivelAcceso {
     @Column(name = "nombre")
     private String nombreNivelAcceso;
 
-    @Column(name = "detalles")
+    @Column(name = "detalle")
     private String detalleNivelAcceso;
 
     @Column(name = "tipo")
