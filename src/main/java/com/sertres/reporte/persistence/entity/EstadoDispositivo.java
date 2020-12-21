@@ -15,7 +15,6 @@ public class EstadoDispositivo {
     @Column(name = "descripcion")
     private String estadoDispositivoDescripcion;
 
-
     public Integer getIdEstadoDispositivo() {
         return idEstadoDispositivo;
     }
