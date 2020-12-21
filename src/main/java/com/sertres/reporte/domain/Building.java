@@ -6,7 +6,7 @@ public class Building {
 
     private String buildingType;
 
-    private String buildingJson;
+    private int buildingData;
 
     public int getBuildingId() {
         return buildingId;
@@ -24,11 +24,22 @@ public class Building {
         this.buildingType = buildingType;
     }
 
-    public String getBuildingJson() {
-        return buildingJson;
+    public int getBuildingData() {
+        return buildingData;
     }
 
-    public void setBuildingJson(String buildingJson) {
-        this.buildingJson = buildingJson;
+    public void setBuildingData(int buildingData) {
+        this.buildingData = buildingData;
+    }
+
+    //relacion con building daata
+    private BuildingData buildingDataRel;
+
+    public BuildingData getBuildingDataRel() {
+        return buildingDataRel;
+    }
+
+    public void setBuildingDataRel(BuildingData buildingDataRel) {
+        this.buildingDataRel = buildingDataRel;
     }
 }

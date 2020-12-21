@@ -15,8 +15,8 @@ public class Edificio {
     @Column(name = "tipo")
     private String TipoEdificio;
 
-    @Column(name = "json")
-    private String jsonEdificio;
+    @Column(name = "datos_edificio")
+    private Integer datos_edificio;
 
     public Integer getIdEdificio() {
         return idEdificio;
@@ -34,12 +34,12 @@ public class Edificio {
         TipoEdificio = tipoEdificio;
     }
 
-    public String getJsonEdificio() {
-        return jsonEdificio;
+    public Integer getDatos_edificio() {
+        return datos_edificio;
     }
 
-    public void setJsonEdificio(String jsonEdificio) {
-        this.jsonEdificio = jsonEdificio;
+    public void setDatos_edificio(Integer datos_edificio) {
+        this.datos_edificio = datos_edificio;
     }
 
     //relacion con dispositivo
@@ -52,5 +52,17 @@ public class Edificio {
 
     public void setDispositivoRelList(List<Dispositivo> dispositivoRelList) {
         this.dispositivoRelList = dispositivoRelList;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "datos_edificio",insertable = false,updatable = false)
+    private DatoEdificio datoEdificioRel;
+
+    public DatoEdificio getDatoEdificioRel() {
+        return datoEdificioRel;
+    }
+
+    public void setDatoEdificioRel(DatoEdificio datoEdificioRel) {
+        this.datoEdificioRel = datoEdificioRel;
     }
 }

@@ -28,5 +28,6 @@ public interface BuildingDataMapper {
 
     //conversion inversa
     @InheritInverseConfiguration
+    @Mapping(target = "edificiosRelList",ignore = true)
     DatoEdificio toDatoEdificio(BuildingData buildingData);
 }

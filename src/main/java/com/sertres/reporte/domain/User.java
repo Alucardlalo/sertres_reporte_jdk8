@@ -85,7 +85,7 @@ public class User {
     }
 
     //relacion user => AccessLevel
-        private AccessLevel accessLevelRel;
+    private AccessLevel accessLevelRel;
 
     public AccessLevel getAccessLevelRel() {
         return accessLevelRel;

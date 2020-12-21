@@ -10,13 +10,14 @@ import org.mapstruct.Mappings;
 import java.util.List;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses = {BuildingDataMapper.class})
 public interface BuildingMapper {
 
     @Mappings({
             @Mapping(source = "idEdificio", target = "buildingId"),
             @Mapping(source = "tipoEdificio", target = "buildingType"),
-            @Mapping(source = "jsonEdificio", target = "buildingJson")
+            @Mapping(source = "datos_edificio", target = "buildingData"),
+            @Mapping(source = "datoEdificioRel",target = "buildingDataRel")
     })
     Building toBuilding(Edificio edificio);
 
@@ -24,5 +25,6 @@ public interface BuildingMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "dispositivoRelList",ignore = true)
+    @Mapping(target = "datoEdificioRel",ignore = true)
     Edificio toEdificio(Building building);
 }
