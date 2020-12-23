@@ -1,6 +1,5 @@
 package com.sertres.reporte.web.controller;
 
-import com.sertres.reporte.domain.Building;
 import com.sertres.reporte.domain.BuildingData;
 import com.sertres.reporte.domain.service.BuildingDataService;
 import org.springframework.beans.factory.annotation.Autowired;
