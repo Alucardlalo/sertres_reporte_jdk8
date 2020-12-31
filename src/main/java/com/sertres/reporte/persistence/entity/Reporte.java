@@ -33,6 +33,9 @@ public class Reporte {
     @Column(name = "estado")
     private Integer estadoReporte;
 
+    @Column(name = "revisionatm")
+    private boolean revisionATM;
+
     @ManyToOne//relacion reporte tipoReporte
     @JoinColumn(name = "id_tipo_reporte", insertable = false, updatable = false)
     private TipoReporte tipoReporte;
@@ -121,6 +124,14 @@ public class Reporte {
 
     public void setDatoVariable(DatoVariable datoVariable) {
         this.datoVariable = datoVariable;
+    }
+
+    public boolean isRevisionATM() {
+        return revisionATM;
+    }
+
+    public void setRevisionATM(boolean revisionATM) {
+        this.revisionATM = revisionATM;
     }
 
     //relacion con dispositivo y estado dispositivo

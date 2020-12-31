@@ -20,6 +20,8 @@ public class Report {
 
     private int status;
 
+    private boolean reviewATM;
+
     private ReportType reportType;
 
     public ReportType getReportType() {
@@ -92,6 +94,14 @@ public class Report {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public boolean isReviewATM() {
+        return reviewATM;
+    }
+
+    public void setReviewATM(boolean reviewATM) {
+        this.reviewATM = reviewATM;
     }
 
     //relationshio with device and reportstatus

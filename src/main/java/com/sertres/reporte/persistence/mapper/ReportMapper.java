@@ -22,6 +22,7 @@ public interface ReportMapper {
             @Mapping(source = "fechaFin", target = "endDate"),
             @Mapping(source = "estadoReporte", target = "status"),
             @Mapping(source = "tipoReporte" , target = "reportType"),
+            @Mapping(source = "revisionATM",target = "reviewATM"),
             @Mapping(source = "dispositivoRel",target = "deviceRel"),
             @Mapping(source = "estadoReporteRel",target = "reportStatusRel")
     })
