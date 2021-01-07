@@ -32,7 +32,7 @@ public class SertresReporteApplication {
 		Date now = new Date();
 		LocalDateTime now2 = Instant.ofEpochMilli(now.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
 		List<Report> getAllroutine = reportService.getAll();
-
+		System.out.print("se realizo la tarea de las 4:30 a las  "+ now2);
 		for (int i = 0; i<10;i++){
 			int activeDevice = getAllroutine.get(i).getDeviceId();//todos los device
 			ArrayList al1 = new ArrayList();al1.add(activeDevice); //lista de device
@@ -48,6 +48,7 @@ public class SertresReporteApplication {
 				LocalDateTime datecompro = getAllroutine.get(i).getCommitmentDate();
 				LocalDateTime dateBegin = getAllroutine.get(i).getBeginDate();
 				LocalDateTime dateEnd = getAllroutine.get(i).getEndDate();
+				int status1 = getAllroutine.get(i).getStatus();
 
 				//save con
 				Report reportUpdate = new Report();
@@ -58,10 +59,10 @@ public class SertresReporteApplication {
 				reportUpdate.setCommitmentDate(datecompro);
 				reportUpdate.setBeginDate(dateBegin);
 				reportUpdate.setEndDate(dateEnd);
-				reportUpdate.setStatus(2);
+				reportUpdate.setStatus(status1);
 				reportService.save(reportUpdate);
 
-			}else if (diasDiff >= 16 && revisado ==  false){
+			}else if (diasDiff >= 16 && revisado == false){
 				int routineId = getAllroutine.get(i).getReportId();
 				int routineType = getAllroutine.get(i).getReportTypeId();
 				String routineName = getAllroutine.get(i).getReportTittle();
@@ -69,7 +70,7 @@ public class SertresReporteApplication {
 				LocalDateTime datecompro = getAllroutine.get(i).getCommitmentDate();
 				LocalDateTime dateBegin = getAllroutine.get(i).getBeginDate();
 				LocalDateTime dateEnd = getAllroutine.get(i).getEndDate();
-
+				int status = getAllroutine.get(i).getStatus();
 				//save con
 				Report reportUpdate = new Report();
 				reportUpdate.setReportId(routineId);
@@ -79,7 +80,16 @@ public class SertresReporteApplication {
 				reportUpdate.setCommitmentDate(datecompro);
 				reportUpdate.setBeginDate(dateBegin);
 				reportUpdate.setEndDate(dateEnd);
-				reportUpdate.setStatus(2);
+				if(status == 1){
+					reportUpdate.setStatus(1);
+				}if(status == 2){
+					reportUpdate.setStatus(3);
+				}if(status == 4){
+					reportUpdate.setStatus(4);
+				}if(status == 5){
+					reportUpdate.setStatus(5);
+				}
+
 				reportUpdate.setReviewATM(true);
 				reportService.save(reportUpdate);
 
@@ -91,7 +101,9 @@ public class SertresReporteApplication {
 					int deviceIdN = getAllroutine.get(i).getDeviceId();
 					//fecha de hoy mas 15 dias para fecha compromiso
 					LocalDateTime dateCommitment = Instant.ofEpochMilli(now.getTime()+1296000000).atZone(ZoneId.systemDefault()).toLocalDateTime();
+					int statusN = getAllroutine.get(i).getStatus();
 					//save nueva rutina
+				if(statusN != 4) {
 					Report newReport = new Report();
 					//newReport.setReportId(id);
 					newReport.setReportTypeId(routineTypeN);
@@ -102,7 +114,7 @@ public class SertresReporteApplication {
 					newReport.setEndDate(null);
 					newReport.setStatus(2);
 					reportService.save(newReport);
-
+				}
 			}
 		}
 
