@@ -20,7 +20,9 @@ public interface BuildingDataMapper {
             @Mapping(source = "datoEdificioCalle", target = "buildingDataStreet"),
             @Mapping(source = "datoEdificioCiudad", target = "buildingDataCity"),
             @Mapping(source = "datoEdificioCP", target = "buildingDataCP"),
-            @Mapping(source = "datoEdificioEstado", target = "buildingDataState")
+            @Mapping(source = "datoEdificioEstado", target = "buildingDataState"),
+            @Mapping(source = "latitudEdificio",target = "buildingLatitude"),
+            @Mapping(source = "longitudEdificio",target = "buildingLongitude")
     })
     BuildingData toBuildingData(DatoEdificio datoEdificio);
 

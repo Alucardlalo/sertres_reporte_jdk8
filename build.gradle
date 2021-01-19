@@ -26,6 +26,8 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 
+	implementation 'org.json:json:20140107'
+	implementation 'com.google.code.gson:gson:2.8.5'
 	//runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8'
 }
 

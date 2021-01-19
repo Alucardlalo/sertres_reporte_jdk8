@@ -18,6 +18,10 @@ public class BuildingData {
 
     private String buildingDataState;
 
+    private String buildingLatitude;
+
+    private String buildingLongitude;
+
     public int getBuildingDataId() {
         return buildingDataId;
     }
@@ -80,5 +84,21 @@ public class BuildingData {
 
     public void setBuildingDataState(String buildingDataState) {
         this.buildingDataState = buildingDataState;
+    }
+
+    public String getBuildingLatitude() {
+        return buildingLatitude;
+    }
+
+    public void setBuildingLatitude(String buildingLatitude) {
+        this.buildingLatitude = buildingLatitude;
+    }
+
+    public String getBuildingLongitude() {
+        return buildingLongitude;
+    }
+
+    public void setBuildingLongitude(String buildingLongitude) {
+        this.buildingLongitude = buildingLongitude;
     }
 }

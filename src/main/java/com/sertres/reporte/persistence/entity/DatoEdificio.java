@@ -33,6 +33,12 @@ public class DatoEdificio {
     @Column(name = "estado")
     private String datoEdificioEstado;
 
+    @Column(name = "longitud")
+    private String longitudEdificio;
+
+    @Column(name = "latitud")
+    private String latitudEdificio;
+
     public Integer getDatoEdificioId() {
         return datoEdificioId;
     }
@@ -95,6 +101,22 @@ public class DatoEdificio {
 
     public void setDatoEdificioEstado(String datoEdificioEstado) {
         this.datoEdificioEstado = datoEdificioEstado;
+    }
+
+    public String getLongitudEdificio() {
+        return longitudEdificio;
+    }
+
+    public void setLongitudEdificio(String longitudEdificio) {
+        this.longitudEdificio = longitudEdificio;
+    }
+
+    public String getLatitudEdificio() {
+        return latitudEdificio;
+    }
+
+    public void setLatitudEdificio(String latitudEdificio) {
+        this.latitudEdificio = latitudEdificio;
     }
 
     //relacion con edificio
