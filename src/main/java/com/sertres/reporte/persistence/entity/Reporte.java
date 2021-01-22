@@ -36,6 +36,12 @@ public class Reporte {
     @Column(name = "revisionatm")
     private boolean revisionATM;
 
+    @Column(name = "elaborado_por")
+    private Integer elaboradoPor;
+
+    @Column(name = "id_elaboracion")
+    private String idElaboracion;
+
     @ManyToOne//relacion reporte tipoReporte
     @JoinColumn(name = "id_tipo_reporte", insertable = false, updatable = false)
     private TipoReporte tipoReporte;
@@ -134,6 +140,22 @@ public class Reporte {
         this.revisionATM = revisionATM;
     }
 
+    public Integer getElaboradoPor() {
+        return elaboradoPor;
+    }
+
+    public void setElaboradoPor(Integer elaboradoPor) {
+        this.elaboradoPor = elaboradoPor;
+    }
+
+    public String getIdElaboracion() {
+        return idElaboracion;
+    }
+
+    public void setIdElaboracion(String idElaboracion) {
+        this.idElaboracion = idElaboracion;
+    }
+
     //relacion con dispositivo y estado dispositivo
     @ManyToOne
     @JoinColumn(name = "id_dispositivo",insertable = false, updatable = false)
@@ -157,5 +179,17 @@ public class Reporte {
 
     public void setEstadoReporteRel(EstadoReporte estadoReporteRel) {
         this.estadoReporteRel = estadoReporteRel;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "elaborado_por",insertable = false,updatable = false)
+    private Usuario usuarioRel;
+
+    public Usuario getUsuarioRel() {
+        return usuarioRel;
+    }
+
+    public void setUsuarioRel(Usuario usuarioRel) {
+        this.usuarioRel = usuarioRel;
     }
 }

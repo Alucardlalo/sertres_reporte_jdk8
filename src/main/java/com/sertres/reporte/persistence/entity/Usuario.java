@@ -2,6 +2,7 @@ package com.sertres.reporte.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario")
@@ -107,4 +108,8 @@ public class Usuario {
     public void setNivelAccesoRel(NivelAcceso nivelAccesoRel) {
         this.nivelAccesoRel = nivelAccesoRel;
     }
+
+    @OneToMany(mappedBy = "usuarioRel")
+    private List<Reporte> reporteRelList;
+
 }

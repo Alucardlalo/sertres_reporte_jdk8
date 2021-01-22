@@ -24,6 +24,10 @@ public class Report {
 
     private ReportType reportType;
 
+    private int createdBy;
+
+    private String idCreated;
+
     public ReportType getReportType() {
         return reportType;
     }
@@ -104,6 +108,22 @@ public class Report {
         this.reviewATM = reviewATM;
     }
 
+    public int getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(int createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getIdCreated() {
+        return idCreated;
+    }
+
+    public void setIdCreated(String idCreated) {
+        this.idCreated = idCreated;
+    }
+
     //relationshio with device and reportstatus
 
     private Device deviceRel;
@@ -124,5 +144,15 @@ public class Report {
 
     public void setReportStatusRel(ReportStatus reportStatusRel) {
         this.reportStatusRel = reportStatusRel;
+    }
+
+    private User userRel;
+
+    public User getUserRel() {
+        return userRel;
+    }
+
+    public void setUserRel(User userRel) {
+        this.userRel = userRel;
     }
 }
