@@ -24,7 +24,7 @@ public class Report {
 
     private ReportType reportType;
 
-    private int createdBy;
+    private Integer createdBy;
 
     private String idCreated;
 
@@ -108,11 +108,11 @@ public class Report {
         this.reviewATM = reviewATM;
     }
 
-    public int getCreatedBy() {
+    public Integer getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(int createdBy) {
+    public void setCreatedBy(Integer createdBy) {
         this.createdBy = createdBy;
     }
 

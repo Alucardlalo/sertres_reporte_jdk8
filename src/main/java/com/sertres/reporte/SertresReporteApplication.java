@@ -49,6 +49,8 @@ public class SertresReporteApplication {
 				LocalDateTime dateBegin = getAllroutine.get(i).getBeginDate();
 				LocalDateTime dateEnd = getAllroutine.get(i).getEndDate();
 				int status1 = getAllroutine.get(i).getStatus();
+				int created1 = getAllroutine.get(i).getCreatedBy();
+				String createdName = getAllroutine.get(i).getIdCreated();
 
 				//save con
 				Report reportUpdate = new Report();
@@ -60,6 +62,8 @@ public class SertresReporteApplication {
 				reportUpdate.setBeginDate(dateBegin);
 				reportUpdate.setEndDate(dateEnd);
 				reportUpdate.setStatus(status1);
+				reportUpdate.setCreatedBy(created1);
+				reportUpdate.setIdCreated(createdName);
 				reportService.save(reportUpdate);
 
 			}else if (diasDiff >= 16 && revisado == false){
@@ -71,6 +75,8 @@ public class SertresReporteApplication {
 				LocalDateTime dateBegin = getAllroutine.get(i).getBeginDate();
 				LocalDateTime dateEnd = getAllroutine.get(i).getEndDate();
 				int status = getAllroutine.get(i).getStatus();
+				int createdByUp = getAllroutine.get(i).getCreatedBy();
+				String createStringUp = getAllroutine.get(i).getIdCreated();
 				//save con
 				Report reportUpdate = new Report();
 				reportUpdate.setReportId(routineId);
@@ -91,6 +97,8 @@ public class SertresReporteApplication {
 				}
 
 				reportUpdate.setReviewATM(true);
+				reportUpdate.setCreatedBy(createdByUp);
+				reportUpdate.setIdCreated(createStringUp);
 				reportService.save(reportUpdate);
 
 
@@ -102,6 +110,8 @@ public class SertresReporteApplication {
 					//fecha de hoy mas 15 dias para fecha compromiso
 					LocalDateTime dateCommitment = Instant.ofEpochMilli(now.getTime()+1296000000).atZone(ZoneId.systemDefault()).toLocalDateTime();
 					int statusN = getAllroutine.get(i).getStatus();
+					int createdN = Integer.parseInt(null);
+					String createdNameN = getAllroutine.get(i).getIdCreated();
 					//save nueva rutina
 				if(statusN != 4) {
 					Report newReport = new Report();
@@ -113,6 +123,8 @@ public class SertresReporteApplication {
 					newReport.setBeginDate(now2);
 					newReport.setEndDate(null);
 					newReport.setStatus(2);
+					newReport.setCreatedBy(null);
+					newReport.setIdCreated(null);
 					reportService.save(newReport);
 				}
 			}
