@@ -110,8 +110,7 @@ public class SertresReporteApplication {
 					//fecha de hoy mas 15 dias para fecha compromiso
 					LocalDateTime dateCommitment = Instant.ofEpochMilli(now.getTime()+1296000000).atZone(ZoneId.systemDefault()).toLocalDateTime();
 					int statusN = getAllroutine.get(i).getStatus();
-					int createdN = Integer.parseInt(null);
-					String createdNameN = getAllroutine.get(i).getIdCreated();
+
 					//save nueva rutina
 				if(statusN != 4) {
 					Report newReport = new Report();
