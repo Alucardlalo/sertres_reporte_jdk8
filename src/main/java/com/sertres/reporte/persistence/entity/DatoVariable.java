@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "dato_variable")
+@Table(name = "rutina_dato_variable")
 public class DatoVariable {
 
     @Id

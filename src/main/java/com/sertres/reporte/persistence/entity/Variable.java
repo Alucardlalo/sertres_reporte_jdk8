@@ -3,7 +3,7 @@ package com.sertres.reporte.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "variable")
+@Table(name = "rutina_variable")
 public class Variable {
 
     @Id
@@ -25,8 +25,6 @@ public class Variable {
     @ManyToOne//relacion reporte tipoReporte
     @JoinColumn(name = "id_tipo_reporte",insertable = false, updatable = false)
     private TipoReporte tipoReporte;
-
-
 
     public Integer getIdVariable() {
         return idVariable;

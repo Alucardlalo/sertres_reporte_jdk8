@@ -31,10 +31,10 @@ public class Dispositivo {
     @Column(name = "tipo_dispositivo")
     private String tipoDispositivo;
 
-    @Column(name = "estado_dispositivo")
+    @Column(name = "id_estado_dispositivo")
     private Integer estadoDispositivo;
 
-    @Column(name = "ultima_fecha_estado")
+    @Column(name = "fecha_estado_dispositivo")
     private LocalDateTime ultimaFechaEstado;
 
     @Column(name = "edificio")
@@ -122,7 +122,7 @@ public class Dispositivo {
 
     //relaciones con edificio & dispositivo estado
     @ManyToOne
-    @JoinColumn(name = "estado_dispositivo",insertable = false,updatable = false)
+    @JoinColumn(name = "id_estado_dispositivo",insertable = false,updatable = false)
     private EstadoDispositivo estadoDispositivoRel;
 
     public EstadoDispositivo getEstadoDispositivoRel() {

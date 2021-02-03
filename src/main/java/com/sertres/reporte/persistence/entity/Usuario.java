@@ -15,7 +15,7 @@ public class Usuario {
 
     private String usuario;
 
-    @Column(name = "nombre_usuario")
+    @Column(name = "nombre")
     private String nombreUsuario;
 
     private String clave;
@@ -29,7 +29,7 @@ public class Usuario {
     @Column(name = "ultimo_acceso")
     private LocalDateTime ultimoAcceso;
 
-    @Column(name = "nivel_acceso")
+    @Column(name = "rutina_nivel_acceso")
     private Integer nivelAcceso;
 
     public Integer getIdUsuario() {
@@ -98,7 +98,7 @@ public class Usuario {
 
     //relacion user => nivelAcceso
     @ManyToOne
-    @JoinColumn(name = "nivel_acceso",updatable = false,insertable = false)
+    @JoinColumn(name = "rutina_nivel_acceso",updatable = false,insertable = false)
     private NivelAcceso nivelAccesoRel;
 
     public NivelAcceso getNivelAccesoRel() {
