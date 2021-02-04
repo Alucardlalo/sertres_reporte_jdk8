@@ -15,10 +15,12 @@ public class ReportStatusController {
     private ReportStatusService rStatusService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<ReportStatus> getAll(){return rStatusService.getAll();}
 
     //save and delete
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ReportStatus save(@RequestBody ReportStatus reportStatus){
         return rStatusService.save(reportStatus);
     }

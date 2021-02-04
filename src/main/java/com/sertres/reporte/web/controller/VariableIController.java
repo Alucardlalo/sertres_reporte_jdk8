@@ -15,17 +15,20 @@ public class VariableIController {
     private VariableIService variableIService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<VariableI> getAll(){
         return variableIService.getAll();
     }
 
     @GetMapping("/reporttype/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<VariableI> getByReportType(@PathVariable("id") int reportType){
         return variableIService.getByReportType(reportType);
     }
 
     //save and delete
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public VariableI save(@RequestBody VariableI variableI){
         return variableIService.save(variableI);
     }

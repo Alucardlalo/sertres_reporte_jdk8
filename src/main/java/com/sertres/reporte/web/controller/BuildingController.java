@@ -15,16 +15,19 @@ public class BuildingController {
     private BuildingService buildingService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Building> getAll(){
         return buildingService.getAll();
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Building> getByBuildingId (@PathVariable("id") int buildingId){
         return buildingService.getByBuildingId(buildingId);
     }
 
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public Building save(@RequestBody Building building){
         return buildingService.save(building);
     }

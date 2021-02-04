@@ -15,11 +15,13 @@ public class BuildingDataController {
     private BuildingDataService buildingDataService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<BuildingData> getAll(){
         return buildingDataService.getAll();
     }
 
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public BuildingData save(@RequestBody BuildingData buildingData){
         return buildingDataService.save(buildingData);
     }

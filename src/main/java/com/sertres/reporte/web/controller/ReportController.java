@@ -15,17 +15,20 @@ public class ReportController {
     private ReportService reportService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Report> getAll(){
         return reportService.getAll();
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Report> getByReport(@PathVariable("id") int reportId){
         return reportService.getByReport(reportId);
     }
 
 
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public Report save(@RequestBody Report report){
         return reportService.save(report);
     }

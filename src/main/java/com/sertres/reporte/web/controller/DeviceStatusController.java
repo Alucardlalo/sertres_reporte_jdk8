@@ -15,11 +15,13 @@ public class DeviceStatusController {
     private DeviceStatusService statusService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<DeviceStatus> getAll(){
         return statusService.getAll();
     }
 
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public DeviceStatus save(@RequestBody DeviceStatus deviceStatus){
         return statusService.save(deviceStatus);
     }

@@ -15,16 +15,19 @@ public class AccessLevelController {
     private AccessLevelService accessLevelService;
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<AccessLevel> getAll(){
         return accessLevelService.getAll();
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<AccessLevel> getByAccessLevelId (@PathVariable("id") int accessLevel){
         return accessLevelService.getByAccessLevelId(accessLevel);
     }
 
     @PostMapping("/save")
+    @CrossOrigin(origins = "http://localhost:3000")
     public AccessLevel save(@RequestBody AccessLevel accessLevel){
         return accessLevelService.save(accessLevel);
     }
