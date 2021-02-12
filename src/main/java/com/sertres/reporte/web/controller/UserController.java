@@ -9,19 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/all")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<User> getAll(){
         return userService.getAll();
     }
 
     @GetMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<User> getByUserId(@PathVariable("id") int userId){
         return userService.getByUserId(userId);
     }
@@ -32,7 +31,6 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    @CrossOrigin(origins = "http://localhost:3000")
     public User save(@RequestBody User user){
         return userService.save(user);
     }

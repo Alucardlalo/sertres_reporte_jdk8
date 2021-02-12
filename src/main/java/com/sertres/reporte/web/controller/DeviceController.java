@@ -9,13 +9,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dispositivo")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class DeviceController {
 
     @Autowired
     private DeviceService deviceService;
 
     @GetMapping("/all")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<Device> getAll(){
         return deviceService.getAll();
     }
@@ -26,7 +26,6 @@ public class DeviceController {
     }
 
     @GetMapping("/edificio/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<Device> getByBuildingId(@PathVariable("id") int buildingId){
         return deviceService.getByBuildingId(buildingId);
     }
@@ -37,7 +36,6 @@ public class DeviceController {
     }
 
     @PostMapping("/save")
-    @CrossOrigin(origins = "http://localhost:3000")
     public Device save(@RequestBody Device device){
         return deviceService.save(device);
     }

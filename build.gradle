@@ -2,11 +2,11 @@ plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
-	id 'war'
-}
 
+}
+apply plugin: "war"
 group = 'com.sertres'
-version = '2.0.1'
+version = '1.1'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -30,10 +30,13 @@ dependencies {
 	implementation 'org.json:json:20140107'
 	implementation 'com.google.code.gson:gson:2.8.5'
 	implementation 'javax.servlet:javax.servlet-api:3.1.0'
-	//implementation 'org.jboss.as:jboss-as-web:7.0.13.Final'
 
-	//runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8'
+	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8'
+
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
 }
+apply plugin: "war"
 
 test {
 	useJUnitPlatform()

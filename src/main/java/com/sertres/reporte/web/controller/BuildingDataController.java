@@ -9,19 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/buildingdata")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class BuildingDataController {
 
     @Autowired
     private BuildingDataService buildingDataService;
 
     @GetMapping("/all")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<BuildingData> getAll(){
         return buildingDataService.getAll();
     }
 
     @PostMapping("/save")
-    @CrossOrigin(origins = "http://localhost:3000")
     public BuildingData save(@RequestBody BuildingData buildingData){
         return buildingDataService.save(buildingData);
     }

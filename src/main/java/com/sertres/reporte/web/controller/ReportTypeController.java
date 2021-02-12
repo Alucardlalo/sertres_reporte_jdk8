@@ -10,19 +10,18 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/reporttype")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class ReportTypeController {
 
     @Autowired
     private ReportTypeService reportTypeService;
 
     @GetMapping("/all")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<ReportType> getAll(){
         return reportTypeService.getAll();
     }
 
     @GetMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<ReportType> getByReportTypeId(@PathVariable("id") int ReportTypeId){
         return reportTypeService.getBYReportTypeId(ReportTypeId);
     }
@@ -33,7 +32,6 @@ public class ReportTypeController {
 
     //save and delete
     @PostMapping("/save")
-    @CrossOrigin(origins = "http://localhost:3000")
     public ReportType save(@RequestBody ReportType reportType){
         return reportTypeService.save(reportType);
     }
