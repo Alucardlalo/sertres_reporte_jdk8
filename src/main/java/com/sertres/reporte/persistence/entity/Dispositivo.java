@@ -16,7 +16,7 @@ public class Dispositivo {
     @Column(name = "nombre_dispositivo")
     private String nombreDispositivo;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion_dispositivo")
     private String descripcionDispositivo;
 
     @Column(name = "marca")
