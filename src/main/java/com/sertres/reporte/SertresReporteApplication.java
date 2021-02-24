@@ -1,6 +1,8 @@
 package com.sertres.reporte;
 
+import com.sertres.reporte.domain.Device;
 import com.sertres.reporte.domain.Report;
+import com.sertres.reporte.domain.service.DeviceService;
 import com.sertres.reporte.domain.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -9,9 +11,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -19,7 +18,6 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.IntStream;
 
 @SpringBootApplication
 @EnableScheduling
@@ -37,14 +35,18 @@ public class SertresReporteApplication extends SpringBootServletInitializer {
 	@Autowired
 	private ReportService reportService;
 
+	@Autowired
+	private DeviceService deviceService;
+
 	//@Scheduled(fixedRate = 10000)
 	@Scheduled(cron = "0 30 16 * * *", zone = "America/Mexico_City")//todos los dias a las 4:30 pm
 	public void routineATM(){
 		Date now = new Date();
 		LocalDateTime now2 = Instant.ofEpochMilli(now.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
 		List<Report> getAllroutine = reportService.getAll();
+		List<Device> getAllDevice = deviceService.getAll();
 		System.out.print("se realizo la tarea de las 4:30 a las  "+ now2);
-		for(int i= 0;i<1000;i++) {
+		for(int i= 0;i<getAllDevice.size();i++) {
 			int activeDevice = getAllroutine.get(i).getDeviceId();//todos los device
 			ArrayList al1 = new ArrayList();
 			al1.add(activeDevice); //lista de device
