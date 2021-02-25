@@ -15,9 +15,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @SpringBootApplication
 @EnableScheduling
@@ -31,7 +29,7 @@ public class SertresReporteApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(SertresReporteApplication.class, args);
 	}
-	
+
 	@Autowired
 	private ReportService reportService;
 
@@ -43,28 +41,47 @@ public class SertresReporteApplication extends SpringBootServletInitializer {
 	public void routineATM(){
 		Date now = new Date();
 		LocalDateTime now2 = Instant.ofEpochMilli(now.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
-		List<Report> getAllroutine = reportService.getAll();
-		List<Device> getAllDevice = deviceService.getAll();
-		System.out.print("se realizo la tarea de las 4:30 a las  "+ now2);
-		for(int i= 0;i<getAllDevice.size();i++) {
-			int activeDevice = getAllroutine.get(i).getDeviceId();//todos los device
-			ArrayList al1 = new ArrayList();
-			al1.add(activeDevice); //lista de device
-			LocalDateTime datebeginroutine = getAllroutine.get(i).getBeginDate();
+		List<Report> getAllroutine = reportService.getAll(); //(0:4, 1:2, 2:6)
+		List<Device> getAllDevice = deviceService.getAll(); // 5485 dispositivos
+		System.out.print("se realizo la tarea de las 4:30 a las  " + now2);
+
+		Map<Integer, Report> mapaRutinas = new HashMap<Integer, Report>();
+		for(Report rutina : getAllroutine) {
+			if (mapaRutinas.containsKey(rutina.getDeviceId())) {
+				if (mapaRutinas.get(rutina.getDeviceId()).getBeginDate().compareTo(rutina.getBeginDate()) > 0) {
+					mapaRutinas.put(rutina.getDeviceId(), rutina);
+				}
+			} else {
+				mapaRutinas.put(rutina.getDeviceId(), rutina);
+			}
+		}
+		for(int i= 0; i<getAllDevice.size(); i++) {
+			int activeDevice = getAllDevice.get(i).getDeviceId();//todos los device
+
+			// Por cada dispositivo busca si tiene rutinas
+			// Busca la rutina con fecha inicio mas reciente
+			// que no esté revisado
+			// Compara fecha actual con inicio
+
+			if (!mapaRutinas.containsKey(activeDevice)) continue;
+
+			Report rutina = mapaRutinas.get(activeDevice);
+
+			LocalDateTime datebeginroutine = rutina.getBeginDate();
 			int diasDiff = now2.compareTo(datebeginroutine);
-			boolean revisado = getAllroutine.get(i).isReviewATM();
-			if (diasDiff <= 15 && diasDiff > 1) {
-				int routineId = getAllroutine.get(i).getReportId();
-				int routineType = getAllroutine.get(i).getReportTypeId();
-				String routineName = getAllroutine.get(i).getReportTittle();
-				int deviceId = getAllroutine.get(i).getDeviceId();
-				LocalDateTime datecompro = getAllroutine.get(i).getCommitmentDate();
-				LocalDateTime dateBegin = getAllroutine.get(i).getBeginDate();
-				LocalDateTime dateEnd = getAllroutine.get(i).getEndDate();
-				int status1 = getAllroutine.get(i).getStatus();
-				int created1 = getAllroutine.get(i).getCreatedBy();
-				String createdName = getAllroutine.get(i).getIdCreated();
-				boolean atm = getAllroutine.get(i).isReviewATM();
+			boolean revisado = rutina.isReviewATM();
+			if (diasDiff <= 16 && diasDiff > 1) {
+				int routineId = rutina.getReportId();
+				int routineType = rutina.getReportTypeId();
+				String routineName = rutina.getReportTittle();
+				int deviceId = rutina.getDeviceId();
+				LocalDateTime datecompro = rutina.getCommitmentDate();
+				LocalDateTime dateBegin = rutina.getBeginDate();
+				LocalDateTime dateEnd = rutina.getEndDate();
+				int status1 = rutina.getStatus();
+				int created1 = rutina.getCreatedBy();
+				String createdName = rutina.getIdCreated();
+				boolean atm = rutina.isReviewATM();
 
 				//save con
 				Report reportUpdate = new Report();
@@ -82,16 +99,16 @@ public class SertresReporteApplication extends SpringBootServletInitializer {
 				reportService.save(reportUpdate);
 
 			} else if (diasDiff >= 16 && revisado == false) {
-				int routineId = getAllroutine.get(i).getReportId();
-				int routineType = getAllroutine.get(i).getReportTypeId();
-				String routineName = getAllroutine.get(i).getReportTittle();
-				int deviceId = getAllroutine.get(i).getDeviceId();
-				LocalDateTime datecompro = getAllroutine.get(i).getCommitmentDate();
-				LocalDateTime dateBegin = getAllroutine.get(i).getBeginDate();
-				LocalDateTime dateEnd = getAllroutine.get(i).getEndDate();
-				int status = getAllroutine.get(i).getStatus();
-				int createdByUp = getAllroutine.get(i).getCreatedBy();
-				String createStringUp = getAllroutine.get(i).getIdCreated();
+				int routineId = rutina.getReportId();
+				int routineType = rutina.getReportTypeId();
+				String routineName = rutina.getReportTittle();
+				int deviceId = rutina.getDeviceId();
+				LocalDateTime datecompro = rutina.getCommitmentDate();
+				LocalDateTime dateBegin = rutina.getBeginDate();
+				LocalDateTime dateEnd = rutina.getEndDate();
+				int status = rutina.getStatus();
+				int createdByUp = rutina.getCreatedBy();
+				String createStringUp = rutina.getIdCreated();
 
 				//save con
 				Report reportUpdate = new Report();
@@ -123,12 +140,12 @@ public class SertresReporteApplication extends SpringBootServletInitializer {
 
 				//creacion de nueva rutina
 				//int id = reportService.getAll().size() +1;
-				int routineTypeN = getAllroutine.get(i).getReportTypeId();
-				String routineNameN = getAllroutine.get(i).getReportTittle();
-				int deviceIdN = getAllroutine.get(i).getDeviceId();
+				int routineTypeN = rutina.getReportTypeId();
+				String routineNameN = rutina.getReportTittle();
+				int deviceIdN = rutina.getDeviceId();
 				//fecha de hoy mas 15 dias para fecha compromiso
 				LocalDateTime dateCommitment = Instant.ofEpochMilli(now.getTime() + 1296000000).atZone(ZoneId.systemDefault()).toLocalDateTime();
-				int statusN = getAllroutine.get(i).getStatus();
+				int statusN = rutina.getStatus();
 
 				//save nueva rutina
 				if (statusN != 4) {
@@ -149,5 +166,5 @@ public class SertresReporteApplication extends SpringBootServletInitializer {
 			}
 		}
 
-}
+	}
 }
